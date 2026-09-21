@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: dark; }
+
+html, body, #root {
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  background:
+    radial-gradient(ellipse 1400px 900px at 50% 6%, #0E2540 0%, #081326 42%, #040810 100%)
+    fixed;
+  color: #DCEFFB;
+  /* Local fallbacks keep the workbench readable when fully offline. */
+  font-family: "IBM Plex Mono", "Courier New", ui-monospace, monospace;
+  -webkit-font-smoothing: antialiased;
+}
+
+button, input { font: inherit; }
+
+/* Desktop-first for the demo, with a safe compact navigation pass. */
+@media (max-width: 1100px) {
+  body { overflow-x: auto; }
+}
+
+@media (max-width: 760px) {
+  .hud-nav-label { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}
+
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: #081326; }
+::-webkit-scrollbar-thumb { background: #1E6E8C; }
