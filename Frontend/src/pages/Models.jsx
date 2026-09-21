@@ -23,17 +23,18 @@ export default function Models() {
   };
 
   return (
-    <div className="p-5">
+    <div className="p-4 sm:p-5">
       <PageHead
         title="Models and routing"
         sub="Every call goes through one OpenAI-compatible client, so Ollama, vLLM and llama.cpp are interchangeable"
         actions={<Button variant="primary" onClick={hotAdd}>{added ? "Registry reloaded" : "Reload registry"}</Button>}
       />
 
-      <div className="grid grid-cols-[1fr_300px] gap-3.5 items-start">
+      <div className="grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-3.5 items-start">
         <div className="space-y-3.5">
           <Panel title="Model registry" meta={models.length + " entries · registry.yaml"}>
-            <table className="w-full border-collapse text-[11.5px]">
+            <div className="overflow-x-auto">
+            <table className="w-full border-collapse text-[11.5px] min-w-[720px]">
               <thead>
                 <tr className="text-[9.5px] text-hud-faint tracking-wide">
                   {["Model","Capabilities","Context","VRAM","Tok/s","Load","State"].map(h => (
@@ -57,6 +58,7 @@ export default function Models() {
                 ))}
               </tbody>
             </table>
+            </div>
             <p className="text-[10.5px] text-hud-faint mt-3 leading-relaxed">
               {added
                 ? "Gemma-3-12B-Vision was added by dropping an entry into registry.yaml. No code change, no restart, and it is routable immediately."
@@ -66,13 +68,13 @@ export default function Models() {
 
           <Panel title="Routing decisions" meta="every choice is logged with its reason">
             {ROUTING_LOG.map((r, i) => (
-              <div key={i} className="flex gap-3 py-2.5 border-b border-white/[0.05] last:border-0">
+              <div key={i} className="flex gap-2 sm:gap-3 py-2.5 border-b border-white/[0.05] last:border-0">
                 <span className="text-[9.5px] text-hud-faint w-14 shrink-0 pt-0.5">{r.t}</span>
-                <span className="flex-1">
+                <span className="flex-1 min-w-0">
                   <b className="block text-[11.5px] text-hud-text font-medium">{r.task}</b>
                   <i className="block text-[10.5px] text-hud-dim not-italic mt-0.5">{r.why}</i>
                 </span>
-                <span className="text-[10.5px] text-hud-cyan shrink-0 pt-0.5">{r.picked}</span>
+                <span className="text-[10.5px] text-hud-cyan shrink-0 pt-0.5 text-right">{r.picked}</span>
               </div>
             ))}
           </Panel>

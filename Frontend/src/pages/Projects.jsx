@@ -10,17 +10,18 @@ const STATE_TONE = { running:"green", queued:"amber" };
 
 export default function Projects() {
   return (
-    <div className="p-5">
+    <div className="p-4 sm:p-5">
       <PageHead
         title="Projects and queue"
         sub="ai.mrpl.local · 14 employees on the internal network, one GPU server"
         actions={<Button variant="primary">New project</Button>}
       />
 
-      <div className="grid grid-cols-[1fr_340px] gap-3.5 items-start">
+      <div className="grid grid-cols-1 lg:grid-cols-[1fr_340px] gap-3.5 items-start">
         <div className="space-y-3.5">
           <Panel title="Projects">
-            <table className="w-full border-collapse text-[11.5px]">
+            <div className="overflow-x-auto">
+            <table className="w-full border-collapse text-[11.5px] min-w-[520px]">
               <thead>
                 <tr className="text-[9.5px] text-hud-faint tracking-wide">
                   {["Project","Lead","Members","Tasks","Visibility"].map(h => (
@@ -42,6 +43,7 @@ export default function Projects() {
                 ))}
               </tbody>
             </table>
+            </div>
           </Panel>
 
           <Panel title="Activity feed" meta="P-101 Inspection Review">
@@ -51,9 +53,8 @@ export default function Projects() {
               ["09:14","R. Shetty","started a task from scan_P101_report.pdf"],
               ["08:51","S. Kamath","ran a pump curve calculation"],
             ].map(([t, who, what]) => (
-              <div key={t} className="flex gap-3 py-2.5 text-[11px] border-b border-white/[0.05] last:border-0">
-                <span className="text-hud-faint w-12 shrink-0">{t}</span>
-                <span className="text-hud-text">{who}</span>
+              <div key={t} className="flex flex-col sm:flex-row gap-1 sm:gap-3 py-2.5 text-[11px] border-b border-white/[0.05] last:border-0">
+                <span className="flex gap-3"><span className="text-hud-faint w-12 shrink-0">{t}</span><span className="text-hud-text shrink-0">{who}</span></span>
                 <span className="text-hud-dim">{what}</span>
               </div>
             ))}

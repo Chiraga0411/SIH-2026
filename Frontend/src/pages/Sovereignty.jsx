@@ -25,7 +25,7 @@ export default function Sovereignty() {
   ]);
 
   return (
-    <div className="p-5">
+    <div className="p-4 sm:p-5">
       <PageHead
         title="Sovereignty monitor"
         sub="Live connection watch over every process in the stack, polled each second"
@@ -37,7 +37,7 @@ export default function Sovereignty() {
         <span><b className="text-hud-amber">Prototype disclosure:</b> connection counters and sample events are local demo data. Browser link state is live; production enforcement comes from the gateway, container policy, and host network monitor.</span>
       </div>
 
-      <div className="grid grid-cols-[320px_1fr_300px] gap-3.5 items-start">
+      <div className="grid grid-cols-1 lg:grid-cols-[320px_1fr_300px] gap-3.5 items-start">
         <div className="space-y-3.5">
           <Panel title="External connections" meta={online ? "browser link online" : "browser offline"}>
             <div className="text-center py-5">
@@ -66,18 +66,19 @@ export default function Sovereignty() {
         <div className="space-y-3.5">
           <Panel title="Blocked attempts" meta="newest first">
             {log.map((e, i) => (
-              <div key={i} className="flex items-center gap-3 py-2.5 border-b border-white/[0.05] last:border-0">
+              <div key={i} className="flex items-center gap-2 sm:gap-3 py-2.5 border-b border-white/[0.05] last:border-0">
                 <span className="text-[9.5px] text-hud-faint w-14 shrink-0">{e.t}</span>
                 <Icon name="x" className="w-3.5 h-3.5 text-hud-red shrink-0" />
-                <span className="flex-1 font-mono text-[11px] text-hud-text">{e.target}</span>
-                <span className="text-[10px] text-hud-dim">{e.by}</span>
+                <span className="flex-1 min-w-0 font-mono text-[11px] text-hud-text truncate">{e.target}</span>
+                <span className="hidden sm:block text-[10px] text-hud-dim shrink-0">{e.by}</span>
                 <Badge tone="red">{e.verdict}</Badge>
               </div>
             ))}
           </Panel>
 
           <Panel title="Local traffic" meta="loopback only">
-            <table className="w-full border-collapse text-[11.5px]">
+            <div className="overflow-x-auto">
+            <table className="w-full border-collapse text-[11.5px] min-w-[480px]">
               <thead>
                 <tr className="text-[9.5px] text-hud-faint tracking-wide">
                   {["Process","Listening on","Peer","Scope"].map(h => (
@@ -96,6 +97,7 @@ export default function Sovereignty() {
                 ))}
               </tbody>
             </table>
+            </div>
           </Panel>
         </div>
 

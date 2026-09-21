@@ -13,7 +13,7 @@ export default function Login({ onEnter }) {
     <div className="min-h-screen grid place-items-center relative overflow-hidden">
       <div className="absolute inset-0 opacity-50"
            style={{ backgroundImage:"linear-gradient(rgba(69,216,255,.06) 1px, transparent 1px), linear-gradient(90deg, rgba(69,216,255,.06) 1px, transparent 1px)", backgroundSize:"44px 44px" }} />
-      <div className="relative w-[380px] bg-hud-panel border border-hud-edge backdrop-blur-sm p-8">
+      <div className="relative w-full max-w-[380px] mx-4 bg-hud-panel border border-hud-edge backdrop-blur-sm p-6 sm:p-8">
         <Corners />
         <div className="flex items-center gap-3 mb-7">
           <span className="w-6 h-6 rotate-45 border-[1.5px] border-hud-cyan relative shrink-0">

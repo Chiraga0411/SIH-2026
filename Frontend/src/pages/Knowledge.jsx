@@ -14,17 +14,17 @@ export default function Knowledge() {
   const [asked, setAsked] = useState(true);
 
   return (
-    <div className="p-5">
+    <div className="p-4 sm:p-5">
       <PageHead
         title="Knowledge base"
         sub="342 documents · hybrid retrieval (vector + BM25) with a local reranker"
         actions={<Button variant="primary">Add source folder</Button>}
       />
 
-      <div className="grid grid-cols-[1fr_340px] gap-3.5 items-start">
+      <div className="grid grid-cols-1 lg:grid-cols-[1fr_340px] gap-3.5 items-start">
         <div className="space-y-3.5">
           <Panel title="Ask the knowledge base" meta="answers are cited or refused">
-            <div className="flex gap-2 mb-4">
+            <div className="flex flex-col sm:flex-row gap-2 mb-4">
               <input value={q} onChange={e => setQ(e.target.value)}
                 className="flex-1 bg-white/[0.04] border border-hud-edge px-3 py-2.5 text-[12.5px] text-hud-text outline-none focus:border-hud-cyan" />
               <Button variant="primary" onClick={() => setAsked(true)}>Search</Button>
@@ -64,7 +64,8 @@ export default function Knowledge() {
           </Panel>
 
           <Panel title="Indexed documents" meta={DOCS.length + " shown of 342"}>
-            <table className="w-full border-collapse text-[11.5px]">
+            <div className="overflow-x-auto">
+            <table className="w-full border-collapse text-[11.5px] min-w-[640px]">
               <thead>
                 <tr className="text-[9.5px] text-hud-faint tracking-wide">
                   {["Document","Type","Pages","Chunks","Clearance","Ingested"].map(h => (
@@ -85,6 +86,7 @@ export default function Knowledge() {
                 ))}
               </tbody>
             </table>
+            </div>
           </Panel>
         </div>
 

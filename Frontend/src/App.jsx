@@ -31,7 +31,7 @@ export default function App() {
       <StatusStrip />
       <div className="flex items-stretch">
         <NavRail page={page} setPage={setPage} />
-        <main className="flex-1 min-w-0">
+        <main className="hud-main flex-1 min-w-0">
           <Page setPage={setPage} />
         </main>
       </div>

@@ -11,7 +11,7 @@ export default function Audit() {
   const [verified, setVerified] = useState(false);
 
   return (
-    <div className="p-5">
+    <div className="p-4 sm:p-5">
       <PageHead
         title="Audit and access"
         sub="Hash-chained log of every model call, tool call and file access"
@@ -27,13 +27,13 @@ export default function Audit() {
         </div>
       )}
 
-      <div className="grid grid-cols-[1fr_320px] gap-3.5 items-start">
+      <div className="grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-3.5 items-start">
         <div className="space-y-3.5">
           <Panel title="Audit chain" meta="4 most recent of 2,342">
             {AUDIT.map((a, i) => (
-              <div key={i} className="flex gap-3 py-3 border-b border-white/[0.05] last:border-0">
+              <div key={i} className="flex gap-2 sm:gap-3 py-3 border-b border-white/[0.05] last:border-0">
                 <span className="text-[9.5px] text-hud-faint w-14 shrink-0 pt-0.5">{a.t}</span>
-                <span className="flex-1">
+                <span className="flex-1 min-w-0">
                   <b className="block text-[11.5px] text-hud-text font-medium">{a.act}</b>
                   <i className="block text-[9.5px] text-hud-faint not-italic font-mono mt-1">
                     prev {a.prev} → hash {a.hash}
@@ -67,7 +67,8 @@ export default function Audit() {
 
         <div className="space-y-3.5">
           <Panel title="Access matrix">
-            <table className="w-full border-collapse text-[11px]">
+            <div className="overflow-x-auto">
+            <table className="w-full border-collapse text-[11px] min-w-[420px]">
               <thead>
                 <tr className="text-[9.5px] text-hud-faint tracking-wide">
                   {["Role","Public","Internal","Restricted","Approve"].map(h => (
@@ -86,6 +87,7 @@ export default function Audit() {
                 ))}
               </tbody>
             </table>
+            </div>
             <p className="text-[10px] text-hud-faint leading-relaxed mt-3">
               Clearance is applied inside the vector query. A user without clearance cannot
               retrieve the chunk at all, so it never reaches the model.

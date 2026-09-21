@@ -17,17 +17,19 @@ body {
   /* Local fallbacks keep the workbench readable when fully offline. */
   font-family: "IBM Plex Mono", "Courier New", ui-monospace, monospace;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
 button, input { font: inherit; }
 
-/* Desktop-first for the demo, with a safe compact navigation pass. */
-@media (max-width: 1100px) {
-  body { overflow-x: auto; }
+/* Mobile bottom-nav spacing so content isn't hidden behind the fixed bar. */
+@media (max-width: 768px) {
+  .hud-main { padding-bottom: 64px; }
 }
 
-@media (max-width: 760px) {
-  .hud-nav-label { display: none; }
+/* Hide 3D twin scene on mobile to save battery and avoid layout issues. */
+@media (max-width: 1024px) {
+  .hud-twin { display: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {

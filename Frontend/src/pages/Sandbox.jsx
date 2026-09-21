@@ -14,14 +14,14 @@ export default function Sandbox() {
   const [networkBlocked, setNetworkBlocked] = useState(true);
 
   return (
-    <div className="p-5">
+    <div className="p-4 sm:p-5">
       <PageHead
         title="Sandbox"
         sub="docker run --network none --read-only --cap-drop ALL --memory 512m --pids-limit 128"
-        actions={<div className="flex gap-2"><Button variant="primary" onClick={() => setProbe(true)}>Run egress probe</Button><Button onClick={() => setNetworkBlocked(v => !v)}>{networkBlocked ? "Network: DENIED" : "Network: ALLOWED"}</Button></div>}
+        actions={<div className="flex flex-wrap gap-2"><Button variant="primary" onClick={() => setProbe(true)}>Run egress probe</Button><Button onClick={() => setNetworkBlocked(v => !v)}>{networkBlocked ? "Network: DENIED" : "Network: ALLOWED"}</Button></div>}
       />
 
-      <div className="grid grid-cols-[1fr_1fr_280px] gap-3.5 items-start">
+      <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr_280px] gap-3.5 items-start">
         <Panel title="Generated code" meta="thickness_margin.py">
           <pre className="text-[11px] leading-relaxed text-hud-dim bg-black/30 border border-hud-edge p-3 overflow-x-auto whitespace-pre">{SANDBOX_CODE}</pre>
           <div className="flex gap-2 mt-3">

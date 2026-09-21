@@ -19,14 +19,14 @@ export default function Multimodal() {
   const [tab, setTab] = useState("pid");
 
   return (
-    <div className="p-5">
+    <div className="p-4 sm:p-5">
       <PageHead
         title="Multimodal ingestion"
         sub="Deskew and denoise, then OCR for print and the vision model for handwriting and drawings"
         actions={<Button variant="primary">Upload file</Button>}
       />
 
-      <div className="flex gap-1.5 mb-3.5">
+      <div className="flex gap-1.5 mb-3.5 flex-wrap">
         {TABS.map(t => (
           <button key={t.id} onClick={() => setTab(t.id)}
             className={`px-4 py-2 text-[12px] font-display font-semibold border
@@ -36,7 +36,7 @@ export default function Multimodal() {
         ))}
       </div>
 
-      <div className="grid grid-cols-[1fr_1fr] gap-3.5 items-start">
+      <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-3.5 items-start">
         <Panel title="Source" meta={tab === "pid" ? "PID_101_rev3.png" : tab === "hand" ? "shift_note_0312.jpg" : "scan_P101_report.pdf"}>
           <div className="aspect-[4/3] border border-hud-edge bg-black/30 relative overflow-hidden">
             <svg viewBox="0 0 400 300" className="w-full h-full">
@@ -69,7 +69,8 @@ export default function Multimodal() {
 
         <div className="space-y-3.5">
           <Panel title="Extracted tags" meta="OCR + regex, cross-checked against the KB">
-            <table className="w-full border-collapse text-[11.5px]">
+            <div className="overflow-x-auto">
+            <table className="w-full border-collapse text-[11.5px] min-w-[560px]">
               <thead>
                 <tr className="text-[9.5px] text-hud-faint tracking-wide">
                   {["Tag","Type","Line","Confidence","Knowledge base"].map(h => (
@@ -91,6 +92,7 @@ export default function Multimodal() {
                 ))}
               </tbody>
             </table>
+            </div>
             <div className="flex gap-2 mt-3.5">
               <Button className="flex-1">Send to Excel</Button>
               <Button className="flex-1">Flag for review</Button>

@@ -9,16 +9,17 @@ import { EVAL_RETRIEVAL, EVAL_TASKS, MODELS } from "../data/mock";
 
 export default function Evaluation() {
   return (
-    <div className="p-5">
+    <div className="p-4 sm:p-5">
       <PageHead
         title="Evaluation"
         sub="30 question knowledge set · 40 agent runs · benchmarks taken on the demo machine"
         actions={<Button variant="primary">Re-run harness</Button>}
       />
 
-      <div className="grid grid-cols-3 gap-3.5 items-start">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-3.5 items-start">
         <Panel title="Retrieval configuration" meta="hit rate and correctness">
-          <table className="w-full border-collapse text-[11.5px]">
+          <div className="overflow-x-auto">
+          <table className="w-full border-collapse text-[11.5px] min-w-[340px]">
             <thead>
               <tr className="text-[9.5px] text-hud-faint tracking-wide">
                 {["Configuration","Hit@1","Hit@5","Correct"].map(h => (
@@ -37,6 +38,7 @@ export default function Evaluation() {
               ))}
             </tbody>
           </table>
+          </div>
           <p className="text-[10px] text-hud-faint leading-relaxed mt-3">
             The reranker is worth 13 points of answer correctness over plain vector search on
             this document set.
@@ -63,7 +65,8 @@ export default function Evaluation() {
         </Panel>
 
         <Panel title="Model benchmark" meta="RTX 4050 · 6 GB">
-          <table className="w-full border-collapse text-[11.5px]">
+          <div className="overflow-x-auto">
+          <table className="w-full border-collapse text-[11.5px] min-w-[280px]">
             <thead>
               <tr className="text-[9.5px] text-hud-faint tracking-wide">
                 {["Model","Tok/s","Load","VRAM"].map(h => (
@@ -82,6 +85,7 @@ export default function Evaluation() {
               ))}
             </tbody>
           </table>
+          </div>
           <div className="mt-4">
             <Bar label="Deliverables passing visual self-check" value={94} />
             <Bar label="Citations present on cited answers" value={100} />

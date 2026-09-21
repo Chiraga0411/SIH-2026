@@ -8,10 +8,12 @@ import { TASK_MIX, TREND } from "../data/mock";
 export default function Overview({ setPage }) {
   return (
     <div className="relative min-h-[calc(100vh-118px)]">
-      <TwinScene hotspotLabel="P-101 · active task" />
+      <div className="hud-twin absolute inset-0">
+        <TwinScene hotspotLabel="P-101 · active task" />
+      </div>
 
-      <div className="relative z-10 flex justify-between gap-5 p-5 pointer-events-none">
-        <div className="w-[262px] space-y-3.5 pointer-events-auto">
+      <div className="relative z-10 flex flex-col lg:flex-row justify-between gap-5 p-4 sm:p-5 pointer-events-none">
+        <div className="w-full lg:w-[262px] space-y-3.5 pointer-events-auto">
           <Panel title="Overview" meta="live">
             <div className="grid grid-cols-2 gap-y-4 gap-x-3">
               <Stat value="3" label="MODELS LOADED" />
@@ -43,7 +45,7 @@ export default function Overview({ setPage }) {
           </Panel>
         </div>
 
-        <div className="w-[262px] space-y-3.5 pointer-events-auto">
+        <div className="w-full lg:w-[262px] space-y-3.5 pointer-events-auto">
           <Panel title="Compute" meta="node-01">
             <Gauge value={61} />
             <div className="flex justify-around text-center mt-1">
@@ -73,9 +75,9 @@ export default function Overview({ setPage }) {
         </div>
       </div>
 
-      <div className="absolute left-1/2 -translate-x-1/2 top-4 z-10">
+      <div className="absolute left-1/2 -translate-x-1/2 top-4 z-10 px-4 w-full max-w-[420px] lg:w-auto lg:max-w-none">
         <button onClick={() => setPage("agent")}
-          className="flex items-center gap-4 bg-hud-panel border border-hud-edge backdrop-blur-sm px-5 py-2.5 text-left hover:border-hud-cyan/60">
+          className="w-full flex items-center gap-3 sm:gap-4 bg-hud-panel border border-hud-edge backdrop-blur-sm px-4 sm:px-5 py-2.5 text-left hover:border-hud-cyan/60">
           <span className="w-2 h-2 rounded-full bg-hud-amber shadow-[0_0_8px_#FF9A4D] animate-pulse shrink-0" />
           <span>
             <b className="block font-display font-bold text-[15px] text-white">P-101 Inspection Review</b>

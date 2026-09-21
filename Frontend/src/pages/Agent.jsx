@@ -32,14 +32,14 @@ export default function Agent() {
   };
 
   return (
-    <div className="p-5">
+    <div className="p-4 sm:p-5">
       <PageHead
         title="Agent workspace"
         sub={`TASK-0042 · ${running ? "executing locally" : "scanned inspection report to approval note"} · iteration 2 of 6`}
         actions={<div className="flex gap-2"><Button>Checkpoint</Button><Button>Stop run</Button></div>}
       />
 
-      <div className="grid grid-cols-[230px_1fr_290px] gap-3.5 items-start">
+      <div className="grid grid-cols-1 lg:grid-cols-[230px_1fr_290px] gap-3.5 items-start">
         <div className="space-y-3.5">
           <Panel title="Plan" meta={PLAN.filter(p=>p.done).length + "/" + PLAN.length}>
             <ol className="space-y-2.5">
@@ -70,7 +70,7 @@ export default function Agent() {
 
         <Panel pad={false} className="min-h-[560px] flex flex-col">
           <div className="flex-1 p-4 space-y-3.5">
-            <div className="ml-auto max-w-[78%] bg-white/[0.05] border border-hud-edge px-3.5 py-2.5 text-[12.5px] leading-relaxed">
+            <div className="ml-auto max-w-full sm:max-w-[78%] bg-white/[0.05] border border-hud-edge px-3.5 py-2.5 text-[12.5px] leading-relaxed">
               {taskText}
             </div>
 
@@ -80,7 +80,7 @@ export default function Agent() {
                 <span className="ml-auto text-hud-amber">router to qwen2.5-14b-instruct</span>
               </div>
               {TRACE.map((s, i) => (
-                <div key={i} className="flex gap-3 px-3.5 py-2.5 border-b border-white/[0.05] last:border-0">
+                <div key={i} className="flex gap-2 sm:gap-3 px-3.5 py-2.5 border-b border-white/[0.05] last:border-0">
                   <span className="w-[58px] shrink-0 pt-px">
                     <Badge tone={s.status === "running" ? "amber" : STAGE_TONE[s.stage]}>{s.stage}</Badge>
                   </span>
