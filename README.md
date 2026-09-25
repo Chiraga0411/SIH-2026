@@ -1,4 +1,4 @@
-# Sovereign Workbench — SIH26117
+w# Sovereign Workbench — SIH26117
 
 An air-gapped, on-prem AI workbench: local models, local knowledge base, sandboxed
 code execution, document workflows with a human approval gate, and a hash-chained
