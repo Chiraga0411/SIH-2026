@@ -1,0 +1,86 @@
+/* Campus shell (from the workbench design). Applies once signed in. */
+body.campus-on{height:100%;overflow:hidden}
+canvas#scene{position:fixed;inset:0;width:100%;height:100%;display:block;touch-action:none;background:var(--ink)}
+button,select,input{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
+
+.brand{position:fixed;top:calc(12px + env(safe-area-inset-top,0px));left:16px;pointer-events:none}
+.brand h1{margin:0;font:700 26px/1 "Barlow Condensed",system-ui,sans-serif;letter-spacing:.01em}
+.brand p{margin:4px 0 0;color:var(--mute);font-size:13px}
+
+.monitor{position:fixed;top:calc(12px + env(safe-area-inset-top,0px));right:12px;display:flex;align-items:stretch;background:rgba(10,21,36,.82);border:1px solid var(--line);backdrop-filter:blur(6px)}
+.monitor .m{padding:6px 14px;border-right:1px solid var(--line);display:flex;flex-direction:column;justify-content:center;min-width:88px}
+.monitor .m b{font:700 26px/1 "Barlow Condensed",sans-serif}
+.monitor .m span{font-size:12px;color:var(--mute)}
+.monitor .ext b{color:var(--ok)}
+.monitor .gpu{border-right:0;min-width:150px}
+.bar{height:6px;background:#12243a;margin-bottom:6px}
+.bar i{display:block;height:100%;width:15%;background:var(--cyan)}
+
+#rail{position:fixed;left:12px;top:calc(76px + env(safe-area-inset-top,0px));bottom:52px;width:232px;display:flex;flex-direction:column;gap:14px;overflow:auto}
+.agents{display:flex;flex-direction:column;gap:6px}
+.ab{display:flex;gap:10px;align-items:flex-start;text-align:left;padding:8px 10px;background:rgba(10,21,36,.82);border:1px solid var(--line);border-left:4px solid var(--c);cursor:pointer;backdrop-filter:blur(6px)}
+.ab:hover,.ab.on{background:rgba(20,40,66,.95)}
+.ab.on{border-color:var(--c)}
+.ab b{display:block;font:600 17px/1.1 "Barlow Condensed",sans-serif}
+.ab small{display:block;color:var(--mute);font-size:12px;line-height:1.3;margin-top:2px}
+.controls{display:flex;flex-direction:column;gap:8px;padding:10px;background:rgba(10,21,36,.82);border:1px solid var(--line);backdrop-filter:blur(6px)}
+.controls label{display:flex;flex-direction:column;gap:3px;color:var(--mute);font-size:12px}
+.controls label.chk{flex-direction:row;align-items:center;gap:8px}
+select{background:#0c1a2c;border:1px solid var(--line);padding:5px 6px}
+
+.btn{background:#0f2036;border:1px solid var(--line);padding:7px 12px;cursor:pointer;font-weight:500}
+.btn:hover:not(:disabled){border-color:var(--cyan)}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.btn.primary{background:var(--amber);border-color:var(--amber);color:#1a1203;font-weight:600}
+.btn.primary:hover:not(:disabled){background:#ffc063;border-color:#ffc063}
+.btn.ghost{background:transparent}
+.btn.good{background:var(--ok);border-color:var(--ok);color:#03160d;font-weight:600}
+
+.tag{position:fixed;left:0;top:0;padding:3px 9px 3px 8px;background:rgba(5,10,18,.78);border:1px solid var(--line);border-left:3px solid var(--c);font:600 15px/1.2 "Barlow Condensed",sans-serif;cursor:pointer;white-space:nowrap;will-change:transform;transition:opacity .25s}
+.tag:hover{background:rgba(20,40,66,.95)}
+
+#panel{position:fixed;top:calc(76px + env(safe-area-inset-top,0px));right:12px;bottom:calc(12px + env(safe-area-inset-bottom,0px));width:min(480px,calc(100vw - 24px));display:flex;flex-direction:column;background:rgba(10,21,36,.93);border:1px solid var(--line);border-left:4px solid var(--agent);backdrop-filter:blur(8px);transform:translateX(112%);transition:transform .5s cubic-bezier(.2,.8,.2,1);pointer-events:none}
+#panel.open{transform:none;pointer-events:auto}
+.phead{display:flex;justify-content:space-between;gap:10px;align-items:flex-start;padding:14px 14px 10px;border-bottom:1px solid var(--line)}
+.phead h2{margin:0;font:700 26px/1 "Barlow Condensed",sans-serif;color:var(--agent)}
+.phead .model{margin:4px 0 0;color:var(--mute);font-size:13px}
+.phead .model b{color:var(--text);font-weight:600}
+.pbody{flex:1;overflow:auto;padding:12px 14px}
+.ticker{position:fixed;left:16px;bottom:calc(14px + env(safe-area-inset-bottom,0px));font:12px/1.4 ui-monospace,Menlo,Consolas,monospace;color:var(--mute);max-width:60vw;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ticker b{color:var(--cyan);font-weight:400}
+#toast{position:fixed;left:50%;top:calc(76px + env(safe-area-inset-top,0px));transform:translate(-50%,-10px);background:var(--amber);color:#1a1203;font-weight:600;padding:8px 14px;opacity:0;pointer-events:none;transition:.3s;max-width:90vw;text-align:center}
+#toast.show{opacity:1;transform:translate(-50%,0)}
+
+.tag.live::before{content:"";display:inline-block;width:7px;height:7px;margin-right:6px;background:var(--amber);animation:blink2 .7s infinite}
+@keyframes blink2{50%{opacity:.15}}
+.monitor .ext b{text-shadow:0 0 14px rgba(75,227,160,.55)}
+@media (max-width:820px){
+  .brand p{display:none}
+  .monitor{top:calc(46px + env(safe-area-inset-top,0px));left:8px;right:8px}
+  .monitor .m{min-width:0;padding:5px 9px;flex:1}
+  .monitor .m b{font-size:20px}
+  .monitor .gpu{min-width:96px}
+  #rail{left:0;right:0;top:auto;bottom:calc(28px + env(safe-area-inset-bottom,0px));width:auto;flex-direction:row;padding:0 8px;overflow-x:auto;gap:8px}
+  .agents{flex-direction:row}
+  .ab{min-width:150px}
+  .ab small{display:none}
+  .controls{flex-direction:row;align-items:flex-end;flex:none}
+  #panel{top:auto;left:8px;right:8px;width:auto;height:58vh;bottom:calc(88px + env(safe-area-inset-bottom,0px));transform:translateY(120%)}
+  #panel.open{transform:none}
+  .ticker{left:8px;max-width:92vw}
+  #toast{top:calc(96px + env(safe-area-inset-top,0px))}
+}
+@media (prefers-reduced-motion:reduce){
+  #panel,#toast,.tag{transition:none}
+  .plan li.cur i,.plan li.done i,.trace div,.pbody>*,.tag.live::before{animation:none}
+  .prog i{transition:none}
+}
+
+.tabs{display:flex;gap:6px;padding:10px 14px 0}
+.tabs button{padding:6px 14px;border:1px solid var(--line);background:transparent;color:var(--mute);font-weight:500}
+.tabs button.on{border-color:var(--agent);background:#142842;color:var(--text)}
+.pbody>*{animation:rise .45s cubic-bezier(.2,.8,.2,1) both}
+@keyframes rise{from{opacity:0;transform:translateY(10px)}}
+.bar i{transition:width .8s ease}
+@media (prefers-reduced-motion:reduce){.pbody>*{animation:none}.bar i{transition:none}}

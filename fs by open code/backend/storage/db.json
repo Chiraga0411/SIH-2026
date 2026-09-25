@@ -1,0 +1,375 @@
+{
+  "users": [
+    {
+      "id": "usr_engineer",
+      "username": "engineer@demo.local",
+      "name": "R. Shetty",
+      "role": "Engineer",
+      "clearance": "Internal"
+    },
+    {
+      "id": "usr_manager",
+      "username": "manager@demo.local",
+      "name": "M. Rao",
+      "role": "Manager",
+      "clearance": "Restricted"
+    },
+    {
+      "id": "usr_admin",
+      "username": "admin@demo.local",
+      "name": "A. Nair",
+      "role": "Admin",
+      "clearance": "Restricted"
+    }
+  ],
+  "projects": [
+    {
+      "id": "prj_p101",
+      "name": "P-101 Inspection Review",
+      "visibility": "Private",
+      "members": [
+        "usr_engineer",
+        "usr_manager"
+      ],
+      "lead": "R. Shetty",
+      "createdAt": "2026-09-25T13:25:29.379Z"
+    },
+    {
+      "id": "prj_cdu",
+      "name": "CDU Shutdown 2026",
+      "visibility": "Shared",
+      "members": [
+        "usr_engineer",
+        "usr_manager",
+        "usr_admin"
+      ],
+      "lead": "M. Rao",
+      "createdAt": "2026-09-25T13:25:29.380Z"
+    },
+    {
+      "id": "prj_sop",
+      "name": "Safety SOP refresh",
+      "visibility": "Shared",
+      "members": [
+        "usr_manager",
+        "usr_admin"
+      ],
+      "lead": "A. Nair",
+      "createdAt": "2026-09-25T13:25:29.380Z"
+    }
+  ],
+  "files": [],
+  "tasks": [],
+  "audit": [],
+  "routingLog": [],
+  "sandboxRuns": [],
+  "lastExtraction": null,
+  "models": [
+    {
+      "id": "qwen25-14b",
+      "name": "Qwen2.5-14B-Instruct",
+      "capabilities": [
+        "reasoning",
+        "summary",
+        "document"
+      ],
+      "ctx": 32768,
+      "vram": "9.1 GB",
+      "tps": 28,
+      "load": "4.2s",
+      "state": "active",
+      "enabled": true,
+      "source": "ollama (local)"
+    },
+    {
+      "id": "qwen25-coder",
+      "name": "Qwen2.5-Coder-7B",
+      "capabilities": [
+        "code",
+        "debugging"
+      ],
+      "ctx": 32768,
+      "vram": "5.4 GB",
+      "tps": 41,
+      "load": "3.1s",
+      "state": "idle",
+      "enabled": true,
+      "source": "ollama (local)"
+    },
+    {
+      "id": "llama32-vision",
+      "name": "Llama-3.2-11B-Vision",
+      "capabilities": [
+        "vision",
+        "ocr"
+      ],
+      "ctx": 16384,
+      "vram": "7.8 GB",
+      "tps": 17,
+      "load": "6.4s",
+      "state": "idle",
+      "enabled": true,
+      "source": "ollama (local)"
+    },
+    {
+      "id": "bge-m3",
+      "name": "bge-m3",
+      "capabilities": [
+        "embed"
+      ],
+      "ctx": 8192,
+      "vram": "1.2 GB",
+      "tps": "—",
+      "load": "0.9s",
+      "state": "resident",
+      "enabled": true,
+      "source": "ollama (local)"
+    },
+    {
+      "id": "bge-reranker",
+      "name": "bge-reranker-v2-m3",
+      "capabilities": [
+        "rerank"
+      ],
+      "ctx": 8192,
+      "vram": "1.1 GB",
+      "tps": "—",
+      "load": "0.8s",
+      "state": "resident",
+      "enabled": true,
+      "source": "ollama (local)"
+    }
+  ],
+  "kbDocs": [
+    {
+      "id": "kb_sop114",
+      "name": "SOP-114 Pressure vessel inspection.pdf",
+      "type": "SOP",
+      "pages": 42,
+      "clearance": "Internal",
+      "ingested": "12 Mar",
+      "chunks": [
+        {
+          "page": 3,
+          "text": "This SOP applies to pressure vessels in the crude and vacuum distillation units, including P-101 and P-102."
+        },
+        {
+          "page": 12,
+          "text": "Minimum permissible shell thickness for class II vessels is 8.5 mm after corrosion allowance."
+        },
+        {
+          "page": 12,
+          "text": "Measured thickness below the minimum requires a follow-up inspection before the vessel is returned to service."
+        },
+        {
+          "page": 14,
+          "text": "Ultrasonic thickness readings shall be recorded at five grid points on the shell and two on the head."
+        },
+        {
+          "page": 21,
+          "text": "Corrosion rate above 0.25 mm/year triggers an internal inspection within six months."
+        }
+      ]
+    },
+    {
+      "id": "kb_cdu_manual",
+      "name": "MRPL CDU operating manual.pdf",
+      "type": "Manual",
+      "pages": 196,
+      "clearance": "Internal",
+      "ingested": "12 Mar",
+      "chunks": [
+        {
+          "page": 45,
+          "text": "Relief protection for the P-101 system is provided by PSV-140 installed on line L-2210."
+        },
+        {
+          "page": 64,
+          "text": "P-101 feeds the fractionation section; discharge pressure is controlled by FV-2203 on line L-2203."
+        },
+        {
+          "page": 88,
+          "text": "Vessels outside tolerance require a follow-up inspection before return to service."
+        },
+        {
+          "page": 120,
+          "text": "Instrument PT-101 measures shell pressure and transmits to the control room."
+        }
+      ]
+    },
+    {
+      "id": "kb_p101_mail",
+      "name": "P-101 correspondence 2024.eml",
+      "type": "Email",
+      "pages": 1,
+      "clearance": "Restricted",
+      "ingested": "14 Mar",
+      "chunks": [
+        {
+          "page": 1,
+          "text": "Thinning was noted near the bottom weld seam of P-101 during the previous shutdown."
+        },
+        {
+          "page": 1,
+          "text": "Vendor advised replacing the seal kit at the next planned outage; quotation attached."
+        }
+      ]
+    },
+    {
+      "id": "kb_incident",
+      "name": "Incident review 2023-07.pdf",
+      "type": "Report",
+      "pages": 18,
+      "clearance": "Restricted",
+      "ingested": "14 Mar",
+      "chunks": [
+        {
+          "page": 4,
+          "text": "The 2023 incident review found delayed escalation of a high-temperature alarm on the CDU."
+        },
+        {
+          "page": 9,
+          "text": "Recommendation: thickness measurements for P-101 must be approved by a manager before return to service."
+        }
+      ]
+    },
+    {
+      "id": "kb_seal",
+      "name": "Vendor datasheet — seal kit.pdf",
+      "type": "Datasheet",
+      "pages": 6,
+      "clearance": "Public",
+      "ingested": "15 Mar",
+      "chunks": [
+        {
+          "page": 2,
+          "text": "Seal kit SK-220 is rated for continuous service up to 180 degrees Celsius."
+        },
+        {
+          "page": 5,
+          "text": "Recommended storage: dry, away from direct sunlight, shelf life 24 months."
+        }
+      ]
+    }
+  ],
+  "evaluation": {
+    "retrieval": [
+      {
+        "config": "Vector only",
+        "hit1": 0.58,
+        "hit5": 0.79,
+        "correct": 0.64
+      },
+      {
+        "config": "Vector + BM25",
+        "hit1": 0.69,
+        "hit5": 0.88,
+        "correct": 0.73
+      },
+      {
+        "config": "Hybrid + reranker",
+        "hit1": 0.82,
+        "hit5": 0.95,
+        "correct": 0.87
+      }
+    ],
+    "tasks": [
+      {
+        "task": "Scan → approval note",
+        "runs": 10,
+        "success": 9,
+        "avg": "48s"
+      },
+      {
+        "task": "Code + tests in sandbox",
+        "runs": 10,
+        "success": 10,
+        "avg": "31s"
+      },
+      {
+        "task": "Engineering calculation",
+        "runs": 10,
+        "success": 10,
+        "avg": "12s"
+      },
+      {
+        "task": "P&ID tag extraction",
+        "runs": 10,
+        "success": 7,
+        "avg": "64s"
+      }
+    ],
+    "lastRun": null,
+    "source": "baseline (30-question set, 40 recorded agent runs)"
+  },
+  "baseline": {
+    "taskMix": [
+      {
+        "label": "Documents",
+        "value": 32,
+        "color": "#59d4ff"
+      },
+      {
+        "label": "Code",
+        "value": 21,
+        "color": "#b48cff"
+      },
+      {
+        "label": "Multimodal",
+        "value": 18,
+        "color": "#7ee787"
+      },
+      {
+        "label": "Retrieval",
+        "value": 15,
+        "color": "#ffd166"
+      },
+      {
+        "label": "Calculation",
+        "value": 9,
+        "color": "#ff8fab"
+      },
+      {
+        "label": "Other",
+        "value": 5,
+        "color": "#26405f"
+      }
+    ],
+    "trend": [
+      46,
+      40,
+      44,
+      26,
+      30,
+      14,
+      20,
+      8
+    ]
+  },
+  "pidTags": [
+    {
+      "tag": "PT-101",
+      "type": "Pressure transmitter",
+      "line": "L-2201",
+      "conf": 0.96
+    },
+    {
+      "tag": "FV-2203",
+      "type": "Flow control valve",
+      "line": "L-2203",
+      "conf": 0.93
+    },
+    {
+      "tag": "TI-118",
+      "type": "Temperature indicator",
+      "line": "L-2201",
+      "conf": 0.88
+    },
+    {
+      "tag": "PSV-140",
+      "type": "Pressure safety valve",
+      "line": "L-2204",
+      "conf": 0.71
+    }
+  ]
+}

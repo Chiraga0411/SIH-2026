@@ -1,0 +1,12 @@
+import fs from 'node:fs/promises';
+const base='http://127.0.0.1:'+(process.env.PORT||4000); const user={'x-demo-user':'engineer@demo.local'};
+const get=async p=>{const r=await fetch(base+p,{headers:user});if(!r.ok)throw new Error(`${p} ${r.status}`);return r.json();};
+const health=await get('/health'); console.log('health',health.ok);
+const routing=await (await fetch(base+'/api/models/route',{method:'POST',headers:{...user,'content-type':'application/json'},body:JSON.stringify({text:'Read scanned inspection report and draft approval note',files:['scan.pdf']})})).json(); console.log('route',routing.model.id);
+const report='/tmp/sih-inspection.txt'; await fs.writeFile(report,'Inspection report. Measured shell thickness 8.1 mm. SOP minimum required 8.5 mm.');
+const form=new FormData(); form.append('projectId','prj_p101'); form.append('files',new Blob([await fs.readFile(report)],{type:'text/plain'}),'inspection.txt');
+const uploaded=await (await fetch(base+'/api/files/upload',{method:'POST',headers:user,body:form})).json(); console.log('uploaded',uploaded[0].originalName);
+const task=await (await fetch(base+'/api/tasks',{method:'POST',headers:{...user,'content-type':'application/json'},body:JSON.stringify({projectId:'prj_p101',prompt:'Analyze inspection report and prepare approval note',fileIds:[uploaded[0].id]})})).json(); console.log('task',task.id);
+let current; for(let i=0;i<20;i++){await new Promise(r=>setTimeout(r,100));current=await get('/api/tasks/'+task.id);if(current.status==='awaiting_approval')break;} console.log('workflow',current.status,current.stage,current.analysis?.findings?.[0]?.verdict);
+const manager={'x-demo-user':'manager@demo.local'};const approved=await (await fetch(base+'/api/tasks/'+task.id+'/approve',{method:'POST',headers:manager})).json();console.log('approved',approved.status);
+console.log('audit',await get('/api/audit/verify'));

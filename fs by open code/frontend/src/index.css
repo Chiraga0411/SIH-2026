@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --ink: #050a12; --deck: #0a1524; --line: #26405f;
+  --cyan: #59d4ff; --amber: #ffb03b; --ok: #4be3a0; --bad: #ff6b5e;
+  --text: #dbe7f5; --mute: #8aa0ba;
+  color-scheme: dark;
+}
+
+html, body, #root { min-height: 100%; margin: 0; }
+
+body {
+  background: var(--ink);
+  color: var(--text);
+  font: 400 14px/1.45 Barlow, system-ui, -apple-system, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+button, input, select { font: inherit; color: inherit; }
+button { cursor: pointer; }
+button:disabled { cursor: not-allowed; opacity: .45; }
+
+:focus-visible { outline: 2px solid var(--amber); outline-offset: 2px; }
+
+/* One consistent scroll strip for the mobile nav and wide tables. */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: var(--ink); }
+::-webkit-scrollbar-thumb { background: var(--line); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}
