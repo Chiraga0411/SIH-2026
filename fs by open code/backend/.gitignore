@@ -1,7 +1,0 @@
-node_modules/
-storage/uploads/*
-storage/artifacts/*
-.env
-.env.*
-!.env.example
-*.log
