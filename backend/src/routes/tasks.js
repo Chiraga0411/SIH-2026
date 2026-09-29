@@ -80,7 +80,18 @@ r.post('/', async (req, res) => {
     model: routing.model.name, result: 'queued', note: routing.reason,
   });
   res.status(202).json(strip(task));
-  runTask(task.id).catch(err => console.error('task run failed', err));
+  runTask(task.id).catch(async err => {
+    console.error('task run failed', err);
+    try {
+      const { db: d2, task: t2 } = await loadTask(task.id);
+      if (t2) {
+        t2.status = 'failed';
+        t2.trace.push({ stage: 'ERROR', message: `Agent run failed: ${err.message}`, at: now(), ms: 0 });
+        await writeStore(d2);
+        await appendAudit({ user: task.createdBy, action: 'task_failed', resource: task.id, model: task.routing.model.name, result: 'failed', note: String(err.message).slice(0, 120) });
+      }
+    } catch (e2) { console.error('could not record task failure', e2); }
+  });
 });
 
 async function loadTask(taskId) {
@@ -162,7 +173,7 @@ async function runTask(taskId) {
     task.stage = 'REVISE';
     task.trace.push({
       stage: 'REVISE',
-      message: 'No local extractor could read the attachment (pdftotext/tesseract not installed). Fell back to the deterministic local analyzer; figures are seeded sample values.',
+      message: 'Could not read measured / minimum thickness figures from the input (no extractable text, or no "<n> mm" readings found). Used the seeded sample values 8.1 / 8.5 mm — verify before relying on this note.',
       ...step(task, t0),
     });
     task.stage = 'VERIFY';
@@ -201,6 +212,9 @@ r.post('/:id/approve', async (req, res) => {
     return res.status(403).json({ error: 'manager_approval_required', role: req.user.role });
   }
   if (t.status === 'approved') return res.json(strip(t));
+  if (t.status !== 'awaiting_approval') {
+    return res.status(409).json({ error: 'not_ready_for_approval', status: t.status, message: 'Only a finished task that is awaiting approval can be signed off.' });
+  }
   t.status = 'approved';
   t.approvedBy = req.user.username;
   t.approvedAt = now();

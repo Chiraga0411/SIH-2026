@@ -52,6 +52,35 @@ export default function Multimodal({ fx }) {
   const missing = tags.filter(x => x.kb === "missing").length;
   const live = !!extraction?.extractedAt;
 
+  // Real vision-model analysis (Model #3, qwen2.5vl:3b) - separate from the
+  // regex tag pipeline above. This one actually sends the image to the model.
+  const [visionResult, setVisionResult] = useState(null);
+  const [visionBusy, setVisionBusy] = useState(false);
+  const [visionErr, setVisionErr] = useState("");
+  const visionInput = useRef(null);
+
+  const runVisionAnalysis = async (e) => {
+    const file = e.target.files?.[0];
+    e.target.value = "";
+    if (!file || visionBusy) return;
+    setVisionBusy(true);
+    setVisionErr("");
+    setVisionResult(null);
+    try {
+      const fd = new FormData();
+      fd.append("file", file);
+      fd.append("mode", tab === "hand" ? "handwriting" : tab === "pid" ? "drawing" : "describe");
+      const result = await api("/api/vision/analyze", { method: "POST", form: fd });
+      setVisionResult(result);
+      fx?.toast("Vision model analysis complete.");
+    } catch (e2) {
+      setVisionErr(`Vision analysis failed: ${e2.message}`);
+    } finally {
+      setVisionBusy(false);
+    }
+  };
+
+
   return (
     <div>
       <PageHead
@@ -146,6 +175,29 @@ export default function Multimodal({ fx }) {
                 Flag for review
               </Button>
             </div>
+          </Panel>
+
+          <Panel title="AI vision analysis" meta="qwen2.5vl:3b — actual model call">
+            <input ref={visionInput} type="file" accept="image/*" className="hidden" onChange={runVisionAnalysis} />
+            <Button variant="primary" className="w-full" onClick={() => visionInput.current?.click()} disabled={visionBusy}>
+              {visionBusy ? "Analyzing with vision model…" : "Upload image for AI analysis"}
+            </Button>
+            {visionErr && <div className="border border-hud-red/50 bg-hud-red/[0.07] px-3.5 py-2.5 mt-3 text-[13px] text-hud-dim leading-snug">{visionErr}</div>}
+            {visionResult && (
+              <div className="mt-3.5 text-[14px] text-hud-dim leading-relaxed space-y-2">
+                {visionResult.text && <p>{visionResult.text}</p>}
+                {visionResult.summary && <p>{visionResult.summary}</p>}
+                {visionResult.confidence && (
+                  <p className="text-[12px] text-hud-faint">Confidence: {visionResult.confidence}</p>
+                )}
+                {visionResult.equipment_tags && (
+                  <p className="text-[12px] text-hud-faint">Tags seen: {visionResult.equipment_tags.join(", ") || "none"}</p>
+                )}
+              </div>
+            )}
+            <p className="text-[12px] text-hud-faint leading-relaxed mt-3">
+              This calls the actual vision model running locally, unlike the regex pipeline above.
+            </p>
           </Panel>
 
           <Panel title="What the pipeline says">

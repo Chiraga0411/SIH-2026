@@ -31,6 +31,7 @@ export default function App() {
   const [focus, setFocus] = useState(null);          // null = whole campus
   const [tab, setTab] = useState("sovereignty");     // control tower has two pages
   const [lite, setLite] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const [jobs, setJobs] = useState(0);
   const [toast, setToast] = useState("");
   const canvasRef = useRef(null);
@@ -41,7 +42,11 @@ export default function App() {
   const { data: sov } = useApi("/api/sovereignty/status", { poll: 3000, enabled: signedIn });
   const { data: queue } = useApi("/api/tasks/queue", { poll: 4000, enabled: signedIn });
 
-  const open = (id, page) => { if (page) setTab(page); setFocus(id); };
+ const open = (id, page) => {
+  if (page) setTab(page);
+  setFocus(id);
+  setMenuOpen(false);
+  }; 
   const goPage = pid => open(PAGE_HOME[pid], pid);
 
   useEffect(() => {
@@ -136,22 +141,65 @@ export default function App() {
         </div>
       </section>
 
-      <nav id="rail" aria-label="Areas">
-        <div className="agents">
-          {BUILDINGS.map(a => (
-            <button key={a.id} className={`ab${focus === a.id ? " on" : ""}`} style={{ "--c": a.color }}
-              onClick={() => open(a.id)} aria-current={focus === a.id ? "page" : undefined}>
-              <span><b>{a.name}</b><small>{a.short}</small></span>
-            </button>
-          ))}
-        </div>
-        <div className="controls">
-          <button className="btn ghost" onClick={() => setFocus(null)}>Whole campus</button>
-          <label className="chk">
-            <input type="checkbox" checked={lite} onChange={e => setLite(e.target.checked)} /> Lite graphics
-          </label>
-        </div>
-      </nav>
+     <button
+  className="hamburger"
+  onClick={() => setMenuOpen(!menuOpen)}
+  aria-label={menuOpen ? "Close menu" : "Open menu"}
+  aria-expanded={menuOpen}
+>
+  {menuOpen ? "✕" : "☰"}
+</button>
+
+{menuOpen && (
+  <div
+    className="menu-overlay"
+    onClick={() => setMenuOpen(false)}
+  />
+)}
+
+<nav
+  id="rail"
+  className={menuOpen ? "menu-open" : ""}
+  aria-label="Areas"
+>
+  <div className="agents">
+    {BUILDINGS.map(a => (
+      <button
+        key={a.id}
+        className={`ab${focus === a.id ? " on" : ""}`}
+        style={{ "--c": a.color }}
+        onClick={() => open(a.id)}
+        aria-current={focus === a.id ? "page" : undefined}
+      >
+        <span>
+          <b>{a.name}</b>
+          <small>{a.short}</small>
+        </span>
+      </button>
+    ))}
+  </div>
+
+  <div className="controls">
+    <button
+      className="btn ghost"
+      onClick={() => {
+        setFocus(null);
+        setMenuOpen(false);
+      }}
+    >
+      Whole campus
+    </button>
+
+    <label className="chk">
+      <input
+        type="checkbox"
+        checked={lite}
+        onChange={e => setLite(e.target.checked)}
+      />
+      Lite graphics
+    </label>
+  </div>
+</nav>
 
       <aside id="panel" className={b ? "open" : ""} style={{ "--agent": b ? b.color : "#59d4ff" }}
         aria-label="Workbench panel" tabIndex={-1}>

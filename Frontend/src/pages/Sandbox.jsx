@@ -22,6 +22,14 @@ export default function Sandbox({ fx }) {
   const [err, setErr] = useState("");
   const { data: runs, reload } = useApi("/api/sandbox/runs");
 
+  // Model 2 (coder): describe a task in English, the agent writes the code,
+  // runs it in this same sandbox, and fixes it on failure — separate from
+  // the "paste your own code" flow above.
+  const [aiTask, setAiTask] = useState("Write a function that returns the nth Fibonacci number, with a test.");
+  const [aiResult, setAiResult] = useState(null);
+  const [aiBusy, setAiBusy] = useState(false);
+  const [aiErr, setAiErr] = useState("");
+
   useEffect(() => {
     api("/api/sandbox/calc", { method: "POST", body: { measured: 8.1, minimum: 8.5, unit: "mm" } })
       .then(setCalc).catch(() => {});
@@ -59,6 +67,26 @@ export default function Sandbox({ fx }) {
     } finally {
       setBusy(false);
     }
+  };
+
+  const solveWithAI = async () => {
+    if (!aiTask.trim() || aiBusy) return;
+    setAiBusy(true);
+    setAiErr("");
+    fx?.busy("code", 2500);
+    try {
+      const r = await api("/api/ai/code/solve", { method: "POST", body: { task: aiTask.trim() } });
+      setAiResult(r);
+      reload();
+    } catch (e) {
+      setAiErr(e.message);
+    } finally {
+      setAiBusy(false);
+    }
+  };
+
+  const loadAiCode = () => {
+    if (aiResult?.solution) setCode(`${aiResult.solution}\n\n${aiResult.tests || ""}`.trim());
   };
 
   const dockerActive = run ? run.executedIn.startsWith("docker") : null;
@@ -149,6 +177,41 @@ audit: written to chain as ${String(probe.hash || "").slice(0, 12)}…`}</pre>
                 <Badge tone={TONE[r.status] || "dim"}>{r.status}</Badge>
               </div>
             ))}
+          </Panel>
+
+          <Panel title="AI coder (Model 2)" meta="write → test → fix loop">
+            <textarea value={aiTask} onChange={e => setAiTask(e.target.value)} rows={2} spellCheck={false}
+              className="w-full text-[13px] leading-relaxed text-hud-dim bg-black/30 border border-hud-edge p-2.5 outline-none focus:border-hud-cyan resize-y" />
+            <Button variant="primary" className="w-full mt-2" onClick={solveWithAI} disabled={aiBusy}>
+              {aiBusy ? "Writing and testing…" : "Write & test with AI"}
+            </Button>
+            {aiErr && <div className="border border-hud-red/50 bg-hud-red/[0.07] px-3 py-2 mt-2.5 text-[13px] text-hud-dim">
+              {aiErr}
+            </div>}
+            {aiResult && (
+              <div className="mt-3">
+                <div className="flex items-center gap-2 mb-2">
+                  <Badge tone={aiResult.status === "passed" ? "green" : "red"}>{aiResult.status}</Badge>
+                  <span className="text-[12px] text-hud-faint">{(aiResult.attempts || []).length} attempt(s){aiResult.escalated ? " · escalated to a stronger model" : ""}</span>
+                </div>
+                {aiResult.executed_in && <p className="text-[12px] text-hud-faint mb-2 leading-snug">Ran in: {aiResult.executed_in}</p>}
+                {aiResult.status !== "passed" && (
+                  <div className="border border-hud-amber/50 bg-hud-amber/[0.07] px-3 py-2 mb-2 text-[13px] text-hud-dim leading-snug">
+                    The tests did not pass. Last test output:
+                    <pre className="mt-1.5 text-[12px] font-mono whitespace-pre-wrap break-words max-h-[220px] overflow-auto">{(aiResult.attempts || [])[(aiResult.attempts || []).length - 1]?.output_tail || "(no output)"}</pre>
+                    <span className="block mt-1.5 text-hud-faint">Small models often get constants wrong. Put the exact formula, constant and expected values in the task.</span>
+                  </div>
+                )}
+                <details className="mb-2">
+                  <summary className="text-[13px] text-hud-cyan cursor-pointer">Show generated code and tests</summary>
+                  <div className="text-[12px] text-hud-faint mt-2">solution.py</div>
+                  <pre className="text-[12px] font-mono text-hud-dim bg-black/30 border border-hud-edge p-2 overflow-auto max-h-[200px] whitespace-pre-wrap">{aiResult.solution}</pre>
+                  <div className="text-[12px] text-hud-faint mt-2">test_solution.py</div>
+                  <pre className="text-[12px] font-mono text-hud-dim bg-black/30 border border-hud-edge p-2 overflow-auto max-h-[200px] whitespace-pre-wrap">{aiResult.tests}</pre>
+                </details>
+                <Button className="w-full" onClick={loadAiCode}>Load into editor above</Button>
+              </div>
+            )}
           </Panel>
 
           <Panel title="Container limits">

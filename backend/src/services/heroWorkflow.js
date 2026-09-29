@@ -14,6 +14,30 @@ const sha256 = (buf) => crypto.createHash('sha256').update(buf).digest('hex');
 
 /* ---------- local text extraction ---------------------------------------- */
 
+const OCR_SERVICE_URL = process.env.VISION_SERVICE_URL_8002 || process.env.GENERAL_SERVICE_URL || 'http://localhost:8002';
+
+/* Model #5 (OCR, FastAPI on :8002 /ocr/read) reads scanned images with
+   confidence scoring and equipment-tag extraction — better than plain
+   tesseract stdout. Falls back to local tesseract/pdftotext below if the
+   service is down, so this never blocks the pipeline. */
+async function ocrViaModel5(plainPath) {
+  try {
+    const buf = await fs.readFile(plainPath);
+    const resp = await fetch(`${OCR_SERVICE_URL}/ocr/read`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ image_b64: buf.toString('base64'), mode: 'document' }),
+      signal: AbortSignal.timeout(60000),
+    });
+    if (!resp.ok) throw new Error(`OCR service returned ${resp.status}`);
+    const j = await resp.json();
+    if (!j.text || !j.text.trim()) throw new Error('empty OCR result');
+    return { text: j.text, engine: `model 5 OCR (${j.engine || 'tesseract'}, confidence ${Math.round((j.confidence || 0) * 100)}%)` };
+  } catch (err) {
+    return { error: err.name === 'TimeoutError' ? 'OCR service timed out' : err.message };
+  }
+}
+
 export async function extractText(filePath, originalName = '') {
   // Stored files are AES-256-GCM encrypted at rest; extract from a
   // temporary plaintext copy that is deleted immediately afterwards.
@@ -28,10 +52,14 @@ async function extractFromPlain(plainPath, originalName, storedPath) {
       if (r.stdout.trim()) return { text: r.stdout, engine: 'pdftotext (digital PDF)' };
     } catch { /* fall through */ }
   }
+  if (['.png', '.jpg', '.jpeg', '.tif', '.tiff', '.bmp', '.webp'].includes(ext)) {
+    const m5 = await ocrViaModel5(plainPath);
+    if (!m5.error) return m5;
+  }
   if (['.png', '.jpg', '.jpeg', '.tif', '.tiff', '.bmp', '.webp'].includes(ext) || ext === '.pdf') {
     try {
       const r = await exec('tesseract', [plainPath, 'stdout', '-l', 'eng'], { timeout: 30000 });
-      if (r.stdout.trim()) return { text: r.stdout, engine: 'tesseract OCR' };
+      if (r.stdout.trim()) return { text: r.stdout, engine: 'tesseract OCR (local fallback)' };
     } catch { /* fall through */ }
   }
   try {
@@ -64,9 +92,29 @@ export function scanInjection(text) {
 
 export function analyze(text, kbDocs = []) {
   const normalized = text.replace(/\s+/g, ' ').trim();
-  const match = normalized.match(/(\d+(?:\.\d+)?)\s*mm[^.]{0,100}?(?:minimum|required|min)[^0-9]{0,20}(\d+(?:\.\d+)?)\s*mm/i);
-  const measured = match ? Number(match[1]) : 8.1;
-  const minimum = match ? Number(match[2]) : 8.5;
+  // Classify every "<number> mm" by the words just before/after it. (The old single regex forbade a
+  // full stop between the two figures, so "Measured 9.2 mm. SOP minimum required 8.5 mm." silently
+  // fell back to the seeded 8.1 / 8.5 and produced a wrong finding.)
+  let measuredFound = null, minimumFound = null;
+  const mmRe = /(\d+(?:\.\d+)?)\s*mm\b/gi;
+  let mm;
+  while ((mm = mmRe.exec(normalized)) !== null) {
+    const before = normalized.slice(Math.max(0, mm.index - 45), mm.index).toLowerCase();
+    const after = normalized.slice(mm.index + mm[0].length, mm.index + mm[0].length + 12).toLowerCase();
+    // words BEFORE the number decide first; words after it only when nothing before says (so the
+    // "(minimum" that follows 7.9 in "7.9 mm (minimum 8.5 mm)" is not mistaken for 7.9's label)
+    let isMin = /(minimum|min\.?|required|allowable|permissible)[^0-9]*$/.test(before);
+    let isMeas = /(measured|reading|recorded|found|thickness|gauged)[^0-9]*$/.test(before);
+    if (!isMin && !isMeas) {
+      isMin = /^\s*[)(,;]?\s*(minimum|min\b|required)/.test(after);
+      isMeas = /^\s*[)(,;]?\s*(measured|reading|recorded)/.test(after);
+    }
+    if (isMin && minimumFound === null) minimumFound = Number(mm[1]);
+    else if (isMeas && !isMin && measuredFound === null) measuredFound = Number(mm[1]);
+  }
+  const figuresFound = measuredFound !== null && minimumFound !== null;
+  const measured = figuresFound ? measuredFound : 8.1;
+  const minimum = figuresFound ? minimumFound : 8.5;
   const below = measured < minimum;
   const margin = Math.round((measured - minimum) * 100) / 100;
   const finding = below
@@ -95,7 +143,8 @@ export function analyze(text, kbDocs = []) {
 
   return {
     summary: normalized.slice(0, 700) || 'Report processed with the local fallback extractor. Figures shown are the seeded sample values — attach a text-readable report for measured figures.',
-    extractionFallback: !normalized,
+    extractionFallback: !figuresFound,
+    figuresFound,
     findings: [{
       finding, measured, minimum, margin,
       verdict: below ? 'follow-up inspection required' : 'within tolerance',

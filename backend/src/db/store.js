@@ -129,12 +129,41 @@ export async function initStore() {
   await fs.mkdir(path.join(root, 'artifacts'), { recursive:true });
   try { await fs.access(dbFile); } catch { await fs.writeFile(dbFile, JSON.stringify(seed, null, 2)); }
 }
+const sleep = ms => new Promise(r => setTimeout(r, ms));
+
 export async function readStore() {
   await initStore();
-  const db = JSON.parse(await fs.readFile(dbFile, 'utf8'));
+  let db;
+  // a reader can catch db.json mid-replace (Windows / OneDrive / antivirus briefly lock it): retry, don't fail
+  for (let i = 0; ; i++) {
+    try { db = JSON.parse(await fs.readFile(dbFile, 'utf8')); break; }
+    catch (e) { if (i >= 8) throw e; await sleep(25 * (i + 1)); }
+  }
   // forward-compatible defaults for stores created by older builds
   for (const k of Object.keys(seed)) if (db[k] === undefined) db[k] = seed[k];
   return db;
 }
-export async function writeStore(data) { await fs.writeFile(dbFile, JSON.stringify(data, null, 2)); return data; }
+
+// Writes are serialized. Preferred path is atomic (temp file + rename). On Windows the rename can fail with
+// EPERM/EBUSY when OneDrive, Defender or a concurrent reader holds db.json, so retry, then fall back to a
+// plain overwrite. A write must never throw just because the file was briefly locked.
+let writeChain = Promise.resolve();
+async function writeNow(data) {
+  const json = JSON.stringify(data, null, 2);
+  const tmp = `${dbFile}.${process.pid}.${Date.now()}.tmp`;
+  try {
+    await fs.writeFile(tmp, json);
+    for (let i = 0; i < 6; i++) {
+      try { await fs.rename(tmp, dbFile); return; }
+      catch (e) { if (!['EPERM', 'EBUSY', 'EACCES'].includes(e.code)) throw e; await sleep(30 * (i + 1)); }
+    }
+  } catch { /* fall through to the direct write */ }
+  await fs.unlink(tmp).catch(() => {});
+  await fs.writeFile(dbFile, json);
+}
+export function writeStore(data) {
+  const job = writeChain.then(() => writeNow(data)).then(() => data);
+  writeChain = job.catch(() => {});
+  return job;
+}
 export { root, now, id, seed };

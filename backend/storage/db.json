@@ -56,14 +56,1682 @@
       ],
       "lead": "A. Nair",
       "createdAt": "2026-09-25T14:16:19.186Z"
+    },
+    {
+      "id": "prj_ce85f84d-0d34-4207-8e5f-4cb54f718db8",
+      "name": "gwquidgi\\",
+      "visibility": "Private",
+      "members": [
+        "usr_engineer"
+      ],
+      "lead": "R. Shetty",
+      "createdAt": "2026-09-29T07:34:36.379Z"
     }
   ],
-  "files": [],
-  "tasks": [],
-  "audit": [],
+  "files": [
+    {
+      "id": "file_8c87aa0b-8b09-4c7f-9ea6-e8339654c7ef",
+      "originalName": "productionsection.pdf",
+      "storedName": "b36222b844298f149dfca7302c3952ec",
+      "path": "C:\\Users\\ASUS\\OneDrive\\Desktop\\SIH-2026-all-models-clickable-FIXED\\combined model 1,3\\SIH-2026-main\\backend\\storage\\uploads\\b36222b844298f149dfca7302c3952ec",
+      "mimeType": "application/pdf",
+      "size": 12216,
+      "projectId": "prj_p101",
+      "clearance": "Internal",
+      "extractionEngine": "direct text read",
+      "encrypted": true,
+      "cipher": "AES-256-GCM",
+      "injection": {
+        "found": null,
+        "action": "Clean"
+      },
+      "createdAt": "2026-09-29T07:11:49.508Z",
+      "uploadedBy": "engineer@demo.local"
+    },
+    {
+      "id": "file_459bba37-1c76-4e0e-9ab0-f65f100c4fe7",
+      "originalName": "MPR-JULY-26.pdf",
+      "storedName": "b24db35ec3c64dce0e91c33a64589318",
+      "path": "C:\\Users\\ASUS\\OneDrive\\Desktop\\SIH-2026-all-models-clickable-FIXED\\combined model 1,3\\SIH-2026-main\\backend\\storage\\uploads\\b24db35ec3c64dce0e91c33a64589318",
+      "mimeType": "application/pdf",
+      "size": 1716109,
+      "projectId": "prj_p101",
+      "clearance": "Internal",
+      "extractionEngine": "direct text read",
+      "encrypted": true,
+      "cipher": "AES-256-GCM",
+      "injection": {
+        "found": null,
+        "action": "Clean"
+      },
+      "createdAt": "2026-09-29T07:14:56.720Z",
+      "uploadedBy": "engineer@demo.local"
+    },
+    {
+      "id": "file_d96af4e0-7ca2-46ad-b3d4-3420c9db1bda",
+      "originalName": "MPR-JULY-26.pdf",
+      "storedName": "815fb9a58a6e7d6d7cd646fb214867ef",
+      "path": "C:\\Users\\ASUS\\OneDrive\\Desktop\\SIH-2026-all-models-clickable-FIXED\\combined model 1,3\\SIH-2026-main\\backend\\storage\\uploads\\815fb9a58a6e7d6d7cd646fb214867ef",
+      "mimeType": "application/pdf",
+      "size": 1716109,
+      "projectId": "prj_p101",
+      "clearance": "Internal",
+      "extractionEngine": "direct text read",
+      "encrypted": true,
+      "cipher": "AES-256-GCM",
+      "injection": {
+        "found": null,
+        "action": "Clean"
+      },
+      "createdAt": "2026-09-29T07:15:14.773Z",
+      "uploadedBy": "engineer@demo.local"
+    },
+    {
+      "id": "file_0b01396a-ba93-4796-91e7-1d354cd4d9e8",
+      "originalName": "productionsection.pdf",
+      "storedName": "0715ea309a914e1e9e1731f8b70074c5",
+      "path": "C:\\Users\\ASUS\\OneDrive\\Desktop\\SIH-2026-all-models-clickable-FIXED\\combined model 1,3\\SIH-2026-main\\backend\\storage\\uploads\\0715ea309a914e1e9e1731f8b70074c5",
+      "mimeType": "application/pdf",
+      "size": 12216,
+      "projectId": "prj_p101",
+      "clearance": "Internal",
+      "extractionEngine": "direct text read",
+      "encrypted": true,
+      "cipher": "AES-256-GCM",
+      "injection": {
+        "found": null,
+        "action": "Clean"
+      },
+      "createdAt": "2026-09-29T07:15:43.963Z",
+      "uploadedBy": "engineer@demo.local"
+    },
+    {
+      "id": "file_5868c0ba-dd99-43cc-ab22-d150bf3d27aa",
+      "originalName": "6_Wheel_Rover_Consolidated_Design_Report (1).pdf",
+      "storedName": "09722b9d9ed372397198bf52cd0ecec5",
+      "path": "C:\\Users\\ASUS\\OneDrive\\Desktop\\SIH-2026-all-models-clickable-FIXED\\combined model 1,3\\SIH-2026-main\\backend\\storage\\uploads\\09722b9d9ed372397198bf52cd0ecec5",
+      "mimeType": "application/pdf",
+      "size": 20166,
+      "projectId": "prj_p101",
+      "clearance": "Internal",
+      "extractionEngine": "direct text read",
+      "encrypted": true,
+      "cipher": "AES-256-GCM",
+      "injection": {
+        "found": null,
+        "action": "Clean"
+      },
+      "createdAt": "2026-09-29T07:17:05.124Z",
+      "uploadedBy": "engineer@demo.local"
+    },
+    {
+      "id": "file_327ec7dd-8579-42e0-b765-1f22d5112b95",
+      "originalName": "MPR-JULY-26.pdf",
+      "storedName": "c42efcc52ffc8f5b53d049c7d2804237",
+      "path": "C:\\Users\\ASUS\\OneDrive\\Desktop\\SIH-2026-all-models-clickable-FIXED\\combined model 1,3\\SIH-2026-main\\backend\\storage\\uploads\\c42efcc52ffc8f5b53d049c7d2804237",
+      "mimeType": "application/pdf",
+      "size": 1716109,
+      "projectId": "prj_p101",
+      "clearance": "Internal",
+      "extractionEngine": "direct text read",
+      "encrypted": true,
+      "cipher": "AES-256-GCM",
+      "injection": {
+        "found": null,
+        "action": "Clean"
+      },
+      "createdAt": "2026-09-29T07:18:03.814Z",
+      "uploadedBy": "engineer@demo.local"
+    },
+    {
+      "id": "file_3a16b73f-9f30-4c17-8838-315942b99a81",
+      "originalName": "sample_inspection_log.pdf",
+      "storedName": "f5a39146b2a792db9e46812868f3080b",
+      "path": "C:\\Users\\ASUS\\OneDrive\\Desktop\\SIH-2026-all-models-clickable-FIXED\\combined model 1,3\\SIH-2026-main\\backend\\storage\\uploads\\f5a39146b2a792db9e46812868f3080b",
+      "mimeType": "application/pdf",
+      "size": 4315,
+      "projectId": "prj_p101",
+      "clearance": "Internal",
+      "extractionEngine": "direct text read",
+      "encrypted": true,
+      "cipher": "AES-256-GCM",
+      "injection": {
+        "found": null,
+        "action": "Clean"
+      },
+      "createdAt": "2026-09-29T07:23:59.169Z",
+      "uploadedBy": "engineer@demo.local"
+    },
+    {
+      "id": "file_f58e68cc-db84-4244-97e9-fa28c4d21180",
+      "originalName": "sample_inspection_log.pdf",
+      "storedName": "91beeefa6b7be67f77466e477b0fe04e",
+      "path": "C:\\Users\\ASUS\\OneDrive\\Desktop\\SIH-2026-all-models-clickable-FIXED\\combined model 1,3\\SIH-2026-main\\backend\\storage\\uploads\\91beeefa6b7be67f77466e477b0fe04e",
+      "mimeType": "application/pdf",
+      "size": 4315,
+      "projectId": "prj_p101",
+      "clearance": "Internal",
+      "extractionEngine": "direct text read",
+      "encrypted": true,
+      "cipher": "AES-256-GCM",
+      "injection": {
+        "found": null,
+        "action": "Clean"
+      },
+      "createdAt": "2026-09-29T07:24:33.803Z",
+      "uploadedBy": "engineer@demo.local"
+    },
+    {
+      "id": "file_b32a798c-fd28-40c2-a1b1-ea767b147188",
+      "originalName": "sample_inspection_log.pdf",
+      "storedName": "2ca319eb612498cec63fe3ef9af60bd0",
+      "path": "C:\\Users\\ASUS\\OneDrive\\Desktop\\SIH-2026-all-models-clickable-FIXED\\combined model 1,3\\SIH-2026-main\\backend\\storage\\uploads\\2ca319eb612498cec63fe3ef9af60bd0",
+      "mimeType": "application/pdf",
+      "size": 4315,
+      "projectId": "prj_p101",
+      "clearance": "Internal",
+      "extractionEngine": "direct text read",
+      "encrypted": true,
+      "cipher": "AES-256-GCM",
+      "injection": {
+        "found": null,
+        "action": "Clean"
+      },
+      "createdAt": "2026-09-29T07:25:22.618Z",
+      "uploadedBy": "engineer@demo.local"
+    },
+    {
+      "id": "file_e317f4cf-1b37-4ec7-861e-d513cf1ab8df",
+      "originalName": "productionsection.pdf",
+      "storedName": "3e53036b980ee9f05f26ebb1cc3f6114",
+      "path": "C:\\Users\\ASUS\\OneDrive\\Desktop\\SIH-2026-all-models-clickable-FIXED\\combined model 1,3\\SIH-2026-main\\backend\\storage\\uploads\\3e53036b980ee9f05f26ebb1cc3f6114",
+      "mimeType": "application/pdf",
+      "size": 12216,
+      "projectId": "prj_p101",
+      "clearance": "Internal",
+      "extractionEngine": "direct text read",
+      "encrypted": true,
+      "cipher": "AES-256-GCM",
+      "injection": {
+        "found": null,
+        "action": "Clean"
+      },
+      "createdAt": "2026-09-29T07:25:44.140Z",
+      "uploadedBy": "engineer@demo.local"
+    },
+    {
+      "id": "file_435cb237-7c5f-4964-b181-eacc41c379bb",
+      "originalName": "sample_inspection_log.pdf",
+      "storedName": "f531cf2093a44742992b795baab09b60",
+      "path": "C:\\Users\\ASUS\\OneDrive\\Desktop\\SIH-2026-all-models-clickable-FIXED\\combined model 1,3\\SIH-2026-main\\backend\\storage\\uploads\\f531cf2093a44742992b795baab09b60",
+      "mimeType": "application/pdf",
+      "size": 4315,
+      "projectId": "prj_p101",
+      "clearance": "Internal",
+      "extractionEngine": "direct text read",
+      "encrypted": true,
+      "cipher": "AES-256-GCM",
+      "injection": {
+        "found": null,
+        "action": "Clean"
+      },
+      "createdAt": "2026-09-29T07:27:41.722Z",
+      "uploadedBy": "engineer@demo.local"
+    },
+    {
+      "id": "file_8db2a21f-d4ee-4d3a-ab59-e5fb705eda0e",
+      "originalName": "sample_inspection_log.pdf",
+      "storedName": "445eb207ab639da07205061798493cf9",
+      "path": "C:\\Users\\ASUS\\OneDrive\\Desktop\\SIH-2026-all-models-clickable-FIXED\\combined model 1,3\\SIH-2026-main\\backend\\storage\\uploads\\445eb207ab639da07205061798493cf9",
+      "mimeType": "application/pdf",
+      "size": 4315,
+      "projectId": "prj_p101",
+      "clearance": "Internal",
+      "extractionEngine": "direct text read",
+      "encrypted": true,
+      "cipher": "AES-256-GCM",
+      "injection": {
+        "found": null,
+        "action": "Clean"
+      },
+      "createdAt": "2026-09-29T07:28:45.028Z",
+      "uploadedBy": "engineer@demo.local"
+    },
+    {
+      "id": "file_2e1acbe3-0cf7-45e0-b62a-2de195131309",
+      "originalName": "sample_inspection_log.pdf",
+      "storedName": "dd037c806c6fd26775c33865bc12b477",
+      "path": "C:\\Users\\ASUS\\OneDrive\\Desktop\\SIH-2026-all-models-clickable-FIXED\\combined model 1,3\\SIH-2026-main\\backend\\storage\\uploads\\dd037c806c6fd26775c33865bc12b477",
+      "mimeType": "application/pdf",
+      "size": 4315,
+      "projectId": "prj_p101",
+      "clearance": "Internal",
+      "extractionEngine": "direct text read",
+      "encrypted": true,
+      "cipher": "AES-256-GCM",
+      "injection": {
+        "found": null,
+        "action": "Clean"
+      },
+      "createdAt": "2026-09-29T07:28:45.054Z",
+      "uploadedBy": "engineer@demo.local"
+    },
+    {
+      "id": "file_ddab1b07-c221-41a4-a4fb-d8c5ae2ea0eb",
+      "originalName": "sample_inspection_log.pdf",
+      "storedName": "3bb0b1c830f941cc430f16efe6de82ef",
+      "path": "C:\\Users\\ASUS\\OneDrive\\Desktop\\SIH-2026-all-models-clickable-FIXED\\combined model 1,3\\SIH-2026-main\\backend\\storage\\uploads\\3bb0b1c830f941cc430f16efe6de82ef",
+      "mimeType": "application/pdf",
+      "size": 4315,
+      "projectId": "prj_p101",
+      "clearance": "Internal",
+      "extractionEngine": "direct text read",
+      "encrypted": true,
+      "cipher": "AES-256-GCM",
+      "injection": {
+        "found": null,
+        "action": "Clean"
+      },
+      "createdAt": "2026-09-29T07:29:04.255Z",
+      "uploadedBy": "engineer@demo.local"
+    },
+    {
+      "id": "file_fad25229-a15f-4932-bda6-baac991512da",
+      "originalName": "638ee824bfa67ffb3a87548c6db68305.jpg",
+      "storedName": "04e2627219921b6a21728de94f3e5efb",
+      "path": "D:\\Soviergn AI\\backend\\storage\\uploads\\04e2627219921b6a21728de94f3e5efb",
+      "mimeType": "image/jpeg",
+      "size": 88153,
+      "projectId": "prj_p101",
+      "clearance": "Internal",
+      "extractionEngine": "direct text read",
+      "encrypted": true,
+      "cipher": "AES-256-GCM",
+      "injection": {
+        "found": null,
+        "action": "Clean"
+      },
+      "createdAt": "2026-09-29T12:53:29.553Z",
+      "uploadedBy": "manager@demo.local"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "task_6cbe8b54-e7bc-49c7-a479-b10eaea943d8",
+      "projectId": "prj_p101",
+      "title": "Inspection analysis",
+      "prompt": "sca the pdf i uploaded",
+      "fileIds": [
+        "file_8db2a21f-d4ee-4d3a-ab59-e5fb705eda0e",
+        "file_2e1acbe3-0cf7-45e0-b62a-2de195131309"
+      ],
+      "status": "awaiting_approval",
+      "stage": "DELIVER",
+      "routing": {
+        "taskType": "document",
+        "model": {
+          "id": "qwen25-14b",
+          "name": "Qwen2.5-14B-Instruct",
+          "capabilities": [
+            "reasoning",
+            "summary",
+            "document"
+          ],
+          "ctx": 32768,
+          "vram": "9.1 GB",
+          "tps": 28,
+          "load": "4.2s",
+          "state": "active",
+          "enabled": true,
+          "source": "ollama (local)"
+        },
+        "reason": "[live router] document scan (matched: PDF attached, PDF attached) Routed to Qwen2.5-14B-Instruct (reasoning)."
+      },
+      "plan": [
+        {
+          "text": "Extract text from the uploaded report (OCR where available)",
+          "done": true
+        },
+        {
+          "text": "Search the local knowledge base for applicable SOP thresholds",
+          "done": true
+        },
+        {
+          "text": "Compare findings against the thresholds",
+          "done": true
+        },
+        {
+          "text": "Verify findings and flag anything suspicious",
+          "done": true
+        },
+        {
+          "text": "Draft the approval note (Word) and request sign-off",
+          "done": true
+        }
+      ],
+      "createdBy": "engineer@demo.local",
+      "createdAt": "2026-09-29T07:28:46.808Z",
+      "trace": [
+        {
+          "stage": "PLAN",
+          "message": "Plan created: extract → search knowledge base → compare against SOP thresholds → verify → draft approval note",
+          "at": "2026-09-29T07:28:46.830Z",
+          "ms": 0
+        },
+        {
+          "stage": "ACT",
+          "tool": "ocr_read",
+          "message": "Processed 2 local file(s) — sample_inspection_log.pdf: direct text read; sample_inspection_log.pdf: direct text read",
+          "at": "2026-09-29T07:28:46.881Z",
+          "ms": 30
+        },
+        {
+          "stage": "ACT",
+          "tool": "kb_search",
+          "message": "Retrieved 3 grounded citation(s) from the local knowledge base",
+          "citations": [
+            "SOP-114 Pressure vessel inspection.pdf §p.12",
+            "SOP-114 Pressure vessel inspection.pdf §p.12",
+            "SOP-114 Pressure vessel inspection.pdf §p.14"
+          ],
+          "at": "2026-09-29T07:28:46.893Z",
+          "ms": 1
+        },
+        {
+          "stage": "OBSERVE",
+          "message": "Measured thickness 8.1 mm is below the SOP minimum of 8.5 mm.",
+          "at": "2026-09-29T07:28:46.893Z",
+          "ms": 1
+        },
+        {
+          "stage": "VERIFY",
+          "message": "Finding checked against local SOP thresholds. Prompt-injection screen: clean.",
+          "at": "2026-09-29T07:28:46.904Z",
+          "ms": 0
+        },
+        {
+          "stage": "REVISE",
+          "message": "Could not read measured / minimum thickness figures from the input (no extractable text, or no \"<n> mm\" readings found). Used the seeded sample values 8.1 / 8.5 mm — verify before relying on this note.",
+          "at": "2026-09-29T07:28:46.904Z",
+          "ms": 0
+        },
+        {
+          "stage": "DELIVER",
+          "tool": "make_docx",
+          "message": "Created Approval_Note_task_6cbe8b54-e7bc-49c7-a479-b10eaea943d8.docx (9312 bytes, sha-256 447c2a977ffb…), awaiting sign-off",
+          "at": "2026-09-29T07:28:46.972Z",
+          "ms": 57
+        }
+      ],
+      "injection": null,
+      "artifact": {
+        "filename": "Approval_Note_task_6cbe8b54-e7bc-49c7-a479-b10eaea943d8.docx",
+        "path": "C:\\Users\\ASUS\\OneDrive\\Desktop\\SIH-2026-all-models-clickable-FIXED\\combined model 1,3\\SIH-2026-main\\backend\\storage\\artifacts\\Approval_Note_task_6cbe8b54-e7bc-49c7-a479-b10eaea943d8.docx",
+        "format": "docx",
+        "bytes": 9312,
+        "sha256": "447c2a977ffb20e08bd5bd01bf228794854b99a50803ffd1cfb40c1ebeafb2d7"
+      },
+      "approvedBy": null,
+      "approvedAt": null,
+      "extractedText": "\n%PDF-1.4\n%���� ReportLab Generated PDF document (opensource)\n1 0 obj\n<<\n/F1 2 0 R /F2 3 0 R\n>>\nendobj\n2 0 obj\n<<\n/BaseFont /Helvetica /Encoding /WinAnsiEncoding /Name /F1 /Subtype /Type1 /Type /Font\n>>\nendobj\n3 0 obj\n<<\n/BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding /Name /F2 /Subtype /Type1 /Type /Font\n>>\nendobj\n4 0 obj\n<<\n/Contents 8 0 R /MediaBox [ 0 0 841.8898 595.2756 ] /Parent 7 0 R /Resources <<\n/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]\n>> /Rotate 0 /Trans <<\n\n>> \n  /Type /Page\n>>\nendobj\n5 0 obj\n<<\n/PageMode /UseNone /Pages 7 0 R /Type /Catalog\n>>\nendobj\n6 0 obj\n<<\n/Author (Sample data) /CreationDate (D:20260929072341+00'00') /Creator (\\(unspecified\\)) /Keywords () /ModDate (D:20260929072341+00'00') /Producer (ReportLab PDF Library - \\(opensource\\)) \n  /Subject (\\(unspecified\\)) /Title (Refinery Inspection Log - September 2026 \\(sample data\\)) /Trapped /False\n>>\nendobj\n7 0 obj\n<<\n/Count 1 /Kids [ 4 0 R ] /Type /Pages\n>>\nendobj\n8 0 obj\n<<\n/Filter [ /ASCII85Decode /FlateDecode ] /Length 2861\n>>\nstream\nGau0G96].!'&NLebgPl=i[)D7h78BkP;Z,K9=N`!\",W,XL(AtK49\"tu!/dG6L(lI^Nblnc#kR\"0+(b]W)7]HNqX:9]ph9p3H,G/P=D`WbNXr17E50![I)D!%oR+^N6U-7>o,Jes1\"J^sX2Xc\"\"uS*0'WW%KO9:E+6I(iWmRE6&a$.XI.GR,.D-\"gU);^\\(6#PDX.cF[@K*<gfTp<T#el[W]5JZQ&=T&M`oD7+LO8/QP\"'KTJJ\\5nDp=RnYed]8thYm0,h*&Eb>M]5oRch!4b;S*?/N6\\#2R';uBP#Y)jj&GO<Jpp@_]]h-$`Rfn1Gj6cD13+-gUM\"PWLV\"!3G1h\\q8Qj5\"^qHBkE-i?E4gu3I\\Jl%W]n?R6uh.h\"M_;$!B(1k5GCn#$$bIiHgH%bNkPF@TJZ6c!?M@TpeDHJ;%*gPX.c7$Hd%C1XKH;ZXH$]V5H9'e1Sl5YgZQMhdPReNq^9qiFm'6`^K&qoR77+a)h)MB=:i6Kccl,ict=WO$RUhCI&c_'qAi'Zl#akhE30T!%jqV:Wl#mQcLM\\;ko0-cU2dV4qS9uSX(hFip[C&Fno.F_6S40iC@,/\\h;n-Xk1;PLXSr->QQ6E9[Z_OZA.FXB$[T%AojbFmP6fs)*1nrH^h_=mC\\O3Sdhof,N8A)VMG*glJrbe7(h*`%GYUJ%G5lE85=M/2?8]t-Er4I*;>g+)oZVB*>W(cPngNh*I@c1L,'5!L@PYk(qSrYs/!VOhmDpZk,4pQDo3Pf-a(V0HVrn@<N=X/b\\GrasIonCk=jW81rtR;ncF2P(`=6*mY[A[nWpWbi]VJ4S'9\\6H_R\"rc//Yjh-+P7#?!!#C%e40V)EWh>]B$I;A>ErnA=@Xp\"Vn!:&+UjKqD_0QQ5Ho\".-6d2g9*%s?$5894cJGI_`P*XMn0I@jQ$o<RaYk,;NmuK5YNA`Td;Ot.+@k]_JJF-6b8/F1l1l@UiMBoZ-&'g/8O;m%EPqd,u&Si4]r>Z387GifjZ<0M22+%.&o$ih_hltN@^l6>&dBZ-j8X]?l&05Y`Pmb6S4e)__p`lhdp[k6RpOQ(`)M886'gd1Fuen+Vi-REI-\\8-B^kOCXpFXEft+`ZA)sEoB?8q)+b#(SA9`?<:0R!\\$r$,bNG+NOndQ)(ToM8`^<ik.Bf._)[Y%\\ej9o,@5(&RTqU0+;4^GUheHheX/eBpm63$DJlFik(4<!>`LR*\\aE^+Y32GfQ?[+I@08jGoU?R6C>q.Y[j4JNj#tR(?KAOa(S%U4o1YacK-[2e=\\2^1[aHISk_\\eF2QT7eFGuJk]OlLaAfB@;Il'0h>S.+W8E1F#cb4F%/5*quHdIuO;ZgZVTHEtUcaac9+%>d`nC>iCEPcFb+f!JSO$bZq_WUd3Z*iY9c<4'9GW1(V1f%K0uQm!dkb7JaKP\"/tZ6,jlZ)2Z'd/\">rdQtV#/6NJs/O(*9NA>C``)/-i%FJW`]F3.tc92*,2B-UKXi,\"PK)a865[`l4&\\+GD7nFh.I-_]Mr+[tq)Mnk4g2!qKH6AI-K4(BLVBb52DRDVcn&&)I&:&e3uV*WmP)IiF=R'#]2cL<3`0`qE4#.Kn-2EMjL9#J-\\A;Rm7GF+-N+64R](a^>[aLG8n!*\\B<@Yu[Ze'Z6-9H(PI/NoGf4\"W1j[G(GQ6OXi$,IXn+L.@@j:63pr<%=J7e8b<.1V(1m=\"9(NChQ+:.`bMr@mYoDh6p-sEOml/gWZ4%NDu_ugQ@c$h9qp97a/Ldj@83VQ'4^FW\\,q5S&/:mC<RnPPDqF9cL44(;gW>e29\"@$aKW-sLGs=*_$8FMiC;$36&kdgK;m-]RPgHUf/'J-TeI5F.LK*?*i)>Lik!s_qAEPYK=.(LapiEkJ9K/5C:?i@l%=,qgS9hK+LnO8Fat!gB/jGspC@,V*SNN6-8$`n>V/(-,93G$S.oXP;)Uko[Ph>^1`X2;L@^PNbI^>&\"N/=E1*^K=bA:7;*6KaHU^DT+E]\\@YNg,91`C651.jED@^Y6lU-VQSu:fhK9mk^BX?4\\jHUENeP0CihII^d15E+UV=TH77NI)O7u.eZ`5qS5!jJ/A#O`OLYR</dY)0i_<<VYSFN%7<9.N\"u/eb&%eeWr@GT\\*6CTEDTqPg-3F4+0BE!;8FjJ(aN&k@c7OiAA6mWs3-2J^$?/5BGcJsnR[=#&6<Q(d/6'ne*6g$)j8XBQo!P+6W':e]+gI+qe]9n.RZ,uV%(]ql71Du9MQM5`CZ!Ne$:TDP=!]^?[p+PL@ZOsH2$DEo4Z:M@3,kdW?/'9be)(X)M\")GUoCeFLt%:K2dd#m(mgp47,KDi_]ZiP,+Qnq9h]W2l9*P4#?'+<Z_R[U8_-D\"7%dmu?\"&+)TfF<#gb<t]9UaU=0HeA><IasY>pK<tBt6hGjVNm=<OujhTnj'$S=,Xd]PI\"\"GAN)Xebs^>6JC[/;=E*N+tHl#MA#1MPa1JAr5ln[U9S&f)\"FP]f(<O>d217+=k-toJ'3lWP#hm%760a+N%=h_KHpTr<4-RCW8faoZIIQOBlu+$l\\mWjlAe'u]=LCfo&'<0Zta\\@T1UpeFhtNBkL5ct8\"]Q0#G/]gn)$'!R(+[R_228.q@UI%?T3XnT5P\\kT$28F`VAMk.d!tbU,0X]a6q%c:VJTX83Q$Z.`.nlkm'1DL&(lrk5Lb[Mh=P`I!Ho673d]8C8mp>l%^W^L&(lrp:W7*(6+-hB-JlFOaa8!<2`\"u`,TlK_pT[ScQo*<FEnG_#7jU`\\i^8GA55Np)Z08OpIm110VOp_;]+\\S\"]<%K.CgmdEpe:#I8](`s&&'l@DBB%YpkWP5P4de6-2i0Pa_n\"FmI93\\YD:XH>73j:cP^Hcg@^-X`,ZsnrNVN2ua*ggp<j~>endstream\nendobj\nxref\n0 9\n0000000000 65535 f \n0000000061 00000 n \n0000000102 00000 n \n0000000209 00000 n \n0000000321 00000 n \n0000000524 00000 n \n0000000592 00000 n \n0000000913 00000 n \n0000000972 00000 n \ntrailer\n<<\n/ID \n[<76650e0989810882ff622ee205566622><76650e0989810882ff622ee205566622>]\n% ReportLab generated PDF document -- digest (opensource)\n\n/Info 6 0 R\n/Root 5 0 R\n/Size 9\n>>\nstartxref\n3924\n%%EOF\n\n%PDF-1.4\n%���� ReportLab Generated PDF document (opensource)\n1 0 obj\n<<\n/F1 2 0 R /F2 3 0 R\n>>\nendobj\n2 0 obj\n<<\n/BaseFont /Helvetica /Encoding /WinAnsiEncoding /Name /F1 /Subtype /Type1 /Type /Font\n>>\nendobj\n3 0 obj\n<<\n/BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding /Name /F2 /Subtype /Type1 /Type /Font\n>>\nendobj\n4 0 obj\n<<\n/Contents 8 0 R /MediaBox [ 0 0 841.8898 595.2756 ] /Parent 7 0 R /Resources <<\n/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]\n>> /Rotate 0 /Trans <<\n\n>> \n  /Type /Page\n>>\nendobj\n5 0 obj\n<<\n/PageMode /UseNone /Pages 7 0 R /Type /Catalog\n>>\nendobj\n6 0 obj\n<<\n/Author (Sample data) /CreationDate (D:20260929072341+00'00') /Creator (\\(unspecified\\)) /Keywords () /ModDate (D:20260929072341+00'00') /Producer (ReportLab PDF Library - \\(opensource\\)) \n  /Subject (\\(unspecified\\)) /Title (Refinery Inspection Log - September 2026 \\(sample data\\)) /Trapped /False\n>>\nendobj\n7 0 obj\n<<\n/Count 1 /Kids [ 4 0 R ] /Type /Pages\n>>\nendobj\n8 0 obj\n<<\n/Filter [ /ASCII85Decode /FlateDecode ] /Length 2861\n>>\nstream\nGau0G96].!'&NLebgPl=i[)D7h78BkP;Z,K9=N`!\",W,XL(AtK49\"tu!/dG6L(lI^Nblnc#kR\"0+(b]W)7]HNqX:9]ph9p3H,G/P=D`WbNXr17E50![I)D!%oR+^N6U-7>o,Jes1\"J^sX2Xc\"\"uS*0'WW%KO9:E+6I(iWmRE6&a$.XI.GR,.D-\"gU);^\\(6#PDX.cF[@K*<gfTp<T#el[W]5JZQ&=T&M`oD7+LO8/QP\"'KTJJ\\5nDp=RnYed]8thYm0,h*&Eb>M]5oRch!4b;S*?/N6\\#2R';uBP#Y)jj&GO<Jpp@_]]h-$`Rfn1Gj6cD13+-gUM\"PWLV\"!3G1h\\q8Qj5\"^qHBkE-i?E4gu3I\\Jl%W]n?R6uh.h\"M_;$!B(1k5GCn#$$bIiHgH%bNkPF@TJZ6c!?M@TpeDHJ;%*gPX.c7$Hd%C1XKH;ZXH$]V5H9'e1Sl5YgZQMhdPReNq^9qiFm'6`^K&qoR77+a)h)MB=:i6Kccl,ict=WO$RUhCI&c_'qAi'Zl#akhE30T!%jqV:Wl#mQcLM\\;ko0-cU2dV4qS9uSX(hFip[C&Fno.F_6S40iC@,/\\h;n-Xk1;PLXSr->QQ6E9[Z_OZA.FXB$[T%AojbFmP6fs)*1nrH^h_=mC\\O3Sdhof,N8A)VMG*glJrbe7(h*`%GYUJ%G5lE85=M/2?8]t-Er4I*;>g+)oZVB*>W(cPngNh*I@c1L,'5!L@PYk(qSrYs/!VOhmDpZk,4pQDo3Pf-a(V0HVrn@<N=X/b\\GrasIonCk=jW81rtR;ncF2P(`=6*mY[A[nWpWbi]VJ4S'9\\6H_R\"rc//Yjh-+P7#?!!#C%e40V)EWh>]B$I;A>ErnA=@Xp\"Vn!:&+UjKqD_0QQ5Ho\".-6d2g9*%s?$5894cJGI_`P*XMn0I@jQ$o<RaYk,;NmuK5YNA`Td;Ot.+@k]_JJF-6b8/F1l1l@UiMBoZ-&'g/8O;m%EPqd,u&Si4]r>Z387GifjZ<0M22+%.&o$ih_hltN@^l6>&dBZ-j8X]?l&05Y`Pmb6S4e)__p`lhdp[k6RpOQ(`)M886'gd1Fuen+Vi-REI-\\8-B^kOCXpFXEft+`ZA)sEoB?8q)+b#(SA9`?<:0R!\\$r$,bNG+NOndQ)(ToM8`^<ik.Bf._)[Y%\\ej9o,@5(&RTqU0+;4^GUheHheX/eBpm63$DJlFik(4<!>`LR*\\aE^+Y32GfQ?[+I@08jGoU?R6C>q.Y[j4JNj#tR(?KAOa(S%U4o1YacK-[2e=\\2^1[aHISk_\\eF2QT7eFGuJk]OlLaAfB@;Il'0h>S.+W8E1F#cb4F%/5*quHdIuO;ZgZVTHEtUcaac9+%>d`nC>iCEPcFb+f!JSO$bZq_WUd3Z*iY9c<4'9GW1(V1f%K0uQm!dkb7JaKP\"/tZ6,jlZ)2Z'd/\">rdQtV#/6NJs/O(*9NA>C``)/-i%FJW`]F3.tc92*,2B-UKXi,\"PK)a865[`l4&\\+GD7nFh.I-_]Mr+[tq)Mnk4g2!qKH6AI-K4(BLVBb52DRDVcn&&)I&:&e3uV*WmP)IiF=R'#]2cL<3`0`qE4#.Kn-2EMjL9#J-\\A;Rm7GF+-N+64R](a^>[aLG8n!*\\B<@Yu[Ze'Z6-9H(PI/NoGf4\"W1j[G(GQ6OXi$,IXn+L.@@j:63pr<%=J7e8b<.1V(1m=\"9(NChQ+:.`bMr@mYoDh6p-sEOml/gWZ4%NDu_ugQ@c$h9qp97a/Ldj@83VQ'4^FW\\,q5S&/:mC<RnPPDqF9cL44(;gW>e29\"@$aKW-sLGs=*_$8FMiC;$36&kdgK;m-]RPgHUf/'J-TeI5F.LK*?*i)>Lik!s_qAEPYK=.(LapiEkJ9K/5C:?i@l%=,qgS9hK+LnO8Fat!gB/jGspC@,V*SNN6-8$`n>V/(-,93G$S.oXP;)Uko[Ph>^1`X2;L@^PNbI^>&\"N/=E1*^K=bA:7;*6KaHU^DT+E]\\@YNg,91`C651.jED@^Y6lU-VQSu:fhK9mk^BX?4\\jHUENeP0CihII^d15E+UV=TH77NI)O7u.eZ`5qS5!jJ/A#O`OLYR</dY)0i_<<VYSFN%7<9.N\"u/eb&%eeWr@GT\\*6CTEDTqPg-3F4+0BE!;8FjJ(aN&k@c7OiAA6mWs3-2J^$?/5BGcJsnR[=#&6<Q(d/6'ne*6g$)j8XBQo!P+6W':e]+gI+qe]9n.RZ,uV%(]ql71Du9MQM5`CZ!Ne$:TDP=!]^?[p+PL@ZOsH2$DEo4Z:M@3,kdW?/'9be)(X)M\")GUoCeFLt%:K2dd#m(mgp47,KDi_]ZiP,+Qnq9h]W2l9*P4#?'+<Z_R[U8_-D\"7%dmu?\"&+)TfF<#gb<t]9UaU=0HeA><IasY>pK<tBt6hGjVNm=<OujhTnj'$S=,Xd]PI\"\"GAN)Xebs^>6JC[/;=E*N+tHl#MA#1MPa1JAr5ln[U9S&f)\"FP]f(<O>d217+=k-toJ'3lWP#hm%760a+N%=h_KHpTr<4-RCW8faoZIIQOBlu+$l\\mWjlAe'u]=LCfo&'<0Zta\\@T1UpeFhtNBkL5ct8\"]Q0#G/]gn)$'!R(+[R_228.q@UI%?T3XnT5P\\kT$28F`VAMk.d!tbU,0X]a6q%c:VJTX83Q$Z.`.nlkm'1DL&(lrk5Lb[Mh=P`I!Ho673d]8C8mp>l%^W^L&(lrp:W7*(6+-hB-JlFOaa8!<2`\"u`,TlK_pT[ScQo*<FEnG_#7jU`\\i^8GA55Np)Z08OpIm110VOp_;]+\\S\"]<%K.CgmdEpe:#I8](`s&&'l@DBB%YpkWP5P4de6-2i0Pa_n\"FmI93\\YD:XH>73j:cP^Hcg@^-X`,ZsnrNVN2ua*ggp<j~>endstream\nendobj\nxref\n0 9\n0000000000 65535 f \n0000000061 00000 n \n0000000102 00000 n \n0000000209 00000 n \n0000000321 00000 n \n0000000524 00000 n \n0000000592 00000 n \n0000000913 00000 n \n0000000972 00000 n \ntrailer\n<<\n/ID \n[<76650e0989810882ff622ee205566622><76650e0989810882ff622ee205566622>]\n% ReportLab generated PDF document -- digest (opensource)\n\n/Info 6 0 R\n/Root 5 0 R\n/Size 9\n>>\nstartxref\n3924\n%%EOF\n",
+      "analysis": {
+        "summary": "%PDF-1.4 %���� ReportLab Generated PDF document (opensource) 1 0 obj << /F1 2 0 R /F2 3 0 R >> endobj 2 0 obj << /BaseFont /Helvetica /Encoding /WinAnsiEncoding /Name /F1 /Subtype /Type1 /Type /Font >> endobj 3 0 obj << /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding /Name /F2 /Subtype /Type1 /Type /Font >> endobj 4 0 obj << /Contents 8 0 R /MediaBox [ 0 0 841.8898 595.2756 ] /Parent 7 0 R /Resources << /Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ] >> /Rotate 0 /Trans << >> /Type /Page >> endobj 5 0 obj << /PageMode /UseNone /Pages 7 0 R /Type /Catalog >> endobj 6 0 obj << /Author (Sample data) /CreationDate (D:20260929072341+00'00') /Creator (\\(unspecified\\)) /Keywords ()",
+        "extractionFallback": true,
+        "figuresFound": false,
+        "findings": [
+          {
+            "finding": "Measured thickness 8.1 mm is below the SOP minimum of 8.5 mm.",
+            "measured": 8.1,
+            "minimum": 8.5,
+            "margin": -0.4,
+            "verdict": "follow-up inspection required",
+            "confidence": 0.94
+          }
+        ],
+        "citations": [
+          {
+            "source": "SOP-114 Pressure vessel inspection.pdf",
+            "clearance": "Internal",
+            "page": 12,
+            "quote": "Minimum permissible shell thickness for class II vessels is 8.5 mm after corrosion allowance."
+          },
+          {
+            "source": "SOP-114 Pressure vessel inspection.pdf",
+            "clearance": "Internal",
+            "page": 12,
+            "quote": "Measured thickness below the minimum requires a follow-up inspection before the vessel is returned to service."
+          },
+          {
+            "source": "SOP-114 Pressure vessel inspection.pdf",
+            "clearance": "Internal",
+            "page": 14,
+            "quote": "Ultrasonic thickness readings shall be recorded at five grid points on the shell and two on the head."
+          }
+        ]
+      }
+    },
+    {
+      "id": "task_5df2a86e-07bf-44e7-9502-f00978fbade0",
+      "projectId": "prj_p101",
+      "title": "Inspection analysis",
+      "prompt": "read the file i uploaded",
+      "fileIds": [
+        "file_b32a798c-fd28-40c2-a1b1-ea767b147188"
+      ],
+      "status": "awaiting_approval",
+      "stage": "DELIVER",
+      "routing": {
+        "taskType": "document",
+        "model": {
+          "id": "qwen25-14b",
+          "name": "Qwen2.5-14B-Instruct",
+          "capabilities": [
+            "reasoning",
+            "summary",
+            "document"
+          ],
+          "ctx": 32768,
+          "vram": "9.1 GB",
+          "tps": 28,
+          "load": "4.2s",
+          "state": "active",
+          "enabled": true,
+          "source": "ollama (local)"
+        },
+        "reason": "[live router] document scan (matched: PDF attached) Routed to Qwen2.5-14B-Instruct (reasoning)."
+      },
+      "plan": [
+        {
+          "text": "Extract text from the uploaded report (OCR where available)",
+          "done": true
+        },
+        {
+          "text": "Search the local knowledge base for applicable SOP thresholds",
+          "done": true
+        },
+        {
+          "text": "Compare findings against the thresholds",
+          "done": true
+        },
+        {
+          "text": "Verify findings and flag anything suspicious",
+          "done": true
+        },
+        {
+          "text": "Draft the approval note (Word) and request sign-off",
+          "done": true
+        }
+      ],
+      "createdBy": "engineer@demo.local",
+      "createdAt": "2026-09-29T07:25:24.554Z",
+      "trace": [
+        {
+          "stage": "PLAN",
+          "message": "Plan created: extract → search knowledge base → compare against SOP thresholds → verify → draft approval note",
+          "at": "2026-09-29T07:25:24.625Z",
+          "ms": 0
+        },
+        {
+          "stage": "ACT",
+          "tool": "ocr_read",
+          "message": "Processed 1 local file(s) — sample_inspection_log.pdf: direct text read",
+          "at": "2026-09-29T07:25:24.679Z",
+          "ms": 18
+        },
+        {
+          "stage": "ACT",
+          "tool": "kb_search",
+          "message": "Retrieved 3 grounded citation(s) from the local knowledge base",
+          "citations": [
+            "SOP-114 Pressure vessel inspection.pdf §p.12",
+            "SOP-114 Pressure vessel inspection.pdf §p.12",
+            "SOP-114 Pressure vessel inspection.pdf §p.14"
+          ],
+          "at": "2026-09-29T07:25:24.693Z",
+          "ms": 1
+        },
+        {
+          "stage": "OBSERVE",
+          "message": "Measured thickness 8.1 mm is below the SOP minimum of 8.5 mm.",
+          "at": "2026-09-29T07:25:24.693Z",
+          "ms": 1
+        },
+        {
+          "stage": "VERIFY",
+          "message": "Finding checked against local SOP thresholds. Prompt-injection screen: clean.",
+          "at": "2026-09-29T07:25:24.705Z",
+          "ms": 0
+        },
+        {
+          "stage": "REVISE",
+          "message": "Could not read measured / minimum thickness figures from the input (no extractable text, or no \"<n> mm\" readings found). Used the seeded sample values 8.1 / 8.5 mm — verify before relying on this note.",
+          "at": "2026-09-29T07:25:24.705Z",
+          "ms": 0
+        },
+        {
+          "stage": "DELIVER",
+          "tool": "make_docx",
+          "message": "Created Approval_Note_task_5df2a86e-07bf-44e7-9502-f00978fbade0.docx (9311 bytes, sha-256 6b9af550d8c8…), awaiting sign-off",
+          "at": "2026-09-29T07:25:24.880Z",
+          "ms": 165
+        }
+      ],
+      "injection": null,
+      "artifact": {
+        "filename": "Approval_Note_task_5df2a86e-07bf-44e7-9502-f00978fbade0.docx",
+        "path": "C:\\Users\\ASUS\\OneDrive\\Desktop\\SIH-2026-all-models-clickable-FIXED\\combined model 1,3\\SIH-2026-main\\backend\\storage\\artifacts\\Approval_Note_task_5df2a86e-07bf-44e7-9502-f00978fbade0.docx",
+        "format": "docx",
+        "bytes": 9311,
+        "sha256": "6b9af550d8c8d9aef8e389236a8718a992ad7139ad5e9065dbe86b625a467ea5"
+      },
+      "approvedBy": null,
+      "approvedAt": null,
+      "extractedText": "\n%PDF-1.4\n%���� ReportLab Generated PDF document (opensource)\n1 0 obj\n<<\n/F1 2 0 R /F2 3 0 R\n>>\nendobj\n2 0 obj\n<<\n/BaseFont /Helvetica /Encoding /WinAnsiEncoding /Name /F1 /Subtype /Type1 /Type /Font\n>>\nendobj\n3 0 obj\n<<\n/BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding /Name /F2 /Subtype /Type1 /Type /Font\n>>\nendobj\n4 0 obj\n<<\n/Contents 8 0 R /MediaBox [ 0 0 841.8898 595.2756 ] /Parent 7 0 R /Resources <<\n/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]\n>> /Rotate 0 /Trans <<\n\n>> \n  /Type /Page\n>>\nendobj\n5 0 obj\n<<\n/PageMode /UseNone /Pages 7 0 R /Type /Catalog\n>>\nendobj\n6 0 obj\n<<\n/Author (Sample data) /CreationDate (D:20260929072341+00'00') /Creator (\\(unspecified\\)) /Keywords () /ModDate (D:20260929072341+00'00') /Producer (ReportLab PDF Library - \\(opensource\\)) \n  /Subject (\\(unspecified\\)) /Title (Refinery Inspection Log - September 2026 \\(sample data\\)) /Trapped /False\n>>\nendobj\n7 0 obj\n<<\n/Count 1 /Kids [ 4 0 R ] /Type /Pages\n>>\nendobj\n8 0 obj\n<<\n/Filter [ /ASCII85Decode /FlateDecode ] /Length 2861\n>>\nstream\nGau0G96].!'&NLebgPl=i[)D7h78BkP;Z,K9=N`!\",W,XL(AtK49\"tu!/dG6L(lI^Nblnc#kR\"0+(b]W)7]HNqX:9]ph9p3H,G/P=D`WbNXr17E50![I)D!%oR+^N6U-7>o,Jes1\"J^sX2Xc\"\"uS*0'WW%KO9:E+6I(iWmRE6&a$.XI.GR,.D-\"gU);^\\(6#PDX.cF[@K*<gfTp<T#el[W]5JZQ&=T&M`oD7+LO8/QP\"'KTJJ\\5nDp=RnYed]8thYm0,h*&Eb>M]5oRch!4b;S*?/N6\\#2R';uBP#Y)jj&GO<Jpp@_]]h-$`Rfn1Gj6cD13+-gUM\"PWLV\"!3G1h\\q8Qj5\"^qHBkE-i?E4gu3I\\Jl%W]n?R6uh.h\"M_;$!B(1k5GCn#$$bIiHgH%bNkPF@TJZ6c!?M@TpeDHJ;%*gPX.c7$Hd%C1XKH;ZXH$]V5H9'e1Sl5YgZQMhdPReNq^9qiFm'6`^K&qoR77+a)h)MB=:i6Kccl,ict=WO$RUhCI&c_'qAi'Zl#akhE30T!%jqV:Wl#mQcLM\\;ko0-cU2dV4qS9uSX(hFip[C&Fno.F_6S40iC@,/\\h;n-Xk1;PLXSr->QQ6E9[Z_OZA.FXB$[T%AojbFmP6fs)*1nrH^h_=mC\\O3Sdhof,N8A)VMG*glJrbe7(h*`%GYUJ%G5lE85=M/2?8]t-Er4I*;>g+)oZVB*>W(cPngNh*I@c1L,'5!L@PYk(qSrYs/!VOhmDpZk,4pQDo3Pf-a(V0HVrn@<N=X/b\\GrasIonCk=jW81rtR;ncF2P(`=6*mY[A[nWpWbi]VJ4S'9\\6H_R\"rc//Yjh-+P7#?!!#C%e40V)EWh>]B$I;A>ErnA=@Xp\"Vn!:&+UjKqD_0QQ5Ho\".-6d2g9*%s?$5894cJGI_`P*XMn0I@jQ$o<RaYk,;NmuK5YNA`Td;Ot.+@k]_JJF-6b8/F1l1l@UiMBoZ-&'g/8O;m%EPqd,u&Si4]r>Z387GifjZ<0M22+%.&o$ih_hltN@^l6>&dBZ-j8X]?l&05Y`Pmb6S4e)__p`lhdp[k6RpOQ(`)M886'gd1Fuen+Vi-REI-\\8-B^kOCXpFXEft+`ZA)sEoB?8q)+b#(SA9`?<:0R!\\$r$,bNG+NOndQ)(ToM8`^<ik.Bf._)[Y%\\ej9o,@5(&RTqU0+;4^GUheHheX/eBpm63$DJlFik(4<!>`LR*\\aE^+Y32GfQ?[+I@08jGoU?R6C>q.Y[j4JNj#tR(?KAOa(S%U4o1YacK-[2e=\\2^1[aHISk_\\eF2QT7eFGuJk]OlLaAfB@;Il'0h>S.+W8E1F#cb4F%/5*quHdIuO;ZgZVTHEtUcaac9+%>d`nC>iCEPcFb+f!JSO$bZq_WUd3Z*iY9c<4'9GW1(V1f%K0uQm!dkb7JaKP\"/tZ6,jlZ)2Z'd/\">rdQtV#/6NJs/O(*9NA>C``)/-i%FJW`]F3.tc92*,2B-UKXi,\"PK)a865[`l4&\\+GD7nFh.I-_]Mr+[tq)Mnk4g2!qKH6AI-K4(BLVBb52DRDVcn&&)I&:&e3uV*WmP)IiF=R'#]2cL<3`0`qE4#.Kn-2EMjL9#J-\\A;Rm7GF+-N+64R](a^>[aLG8n!*\\B<@Yu[Ze'Z6-9H(PI/NoGf4\"W1j[G(GQ6OXi$,IXn+L.@@j:63pr<%=J7e8b<.1V(1m=\"9(NChQ+:.`bMr@mYoDh6p-sEOml/gWZ4%NDu_ugQ@c$h9qp97a/Ldj@83VQ'4^FW\\,q5S&/:mC<RnPPDqF9cL44(;gW>e29\"@$aKW-sLGs=*_$8FMiC;$36&kdgK;m-]RPgHUf/'J-TeI5F.LK*?*i)>Lik!s_qAEPYK=.(LapiEkJ9K/5C:?i@l%=,qgS9hK+LnO8Fat!gB/jGspC@,V*SNN6-8$`n>V/(-,93G$S.oXP;)Uko[Ph>^1`X2;L@^PNbI^>&\"N/=E1*^K=bA:7;*6KaHU^DT+E]\\@YNg,91`C651.jED@^Y6lU-VQSu:fhK9mk^BX?4\\jHUENeP0CihII^d15E+UV=TH77NI)O7u.eZ`5qS5!jJ/A#O`OLYR</dY)0i_<<VYSFN%7<9.N\"u/eb&%eeWr@GT\\*6CTEDTqPg-3F4+0BE!;8FjJ(aN&k@c7OiAA6mWs3-2J^$?/5BGcJsnR[=#&6<Q(d/6'ne*6g$)j8XBQo!P+6W':e]+gI+qe]9n.RZ,uV%(]ql71Du9MQM5`CZ!Ne$:TDP=!]^?[p+PL@ZOsH2$DEo4Z:M@3,kdW?/'9be)(X)M\")GUoCeFLt%:K2dd#m(mgp47,KDi_]ZiP,+Qnq9h]W2l9*P4#?'+<Z_R[U8_-D\"7%dmu?\"&+)TfF<#gb<t]9UaU=0HeA><IasY>pK<tBt6hGjVNm=<OujhTnj'$S=,Xd]PI\"\"GAN)Xebs^>6JC[/;=E*N+tHl#MA#1MPa1JAr5ln[U9S&f)\"FP]f(<O>d217+=k-toJ'3lWP#hm%760a+N%=h_KHpTr<4-RCW8faoZIIQOBlu+$l\\mWjlAe'u]=LCfo&'<0Zta\\@T1UpeFhtNBkL5ct8\"]Q0#G/]gn)$'!R(+[R_228.q@UI%?T3XnT5P\\kT$28F`VAMk.d!tbU,0X]a6q%c:VJTX83Q$Z.`.nlkm'1DL&(lrk5Lb[Mh=P`I!Ho673d]8C8mp>l%^W^L&(lrp:W7*(6+-hB-JlFOaa8!<2`\"u`,TlK_pT[ScQo*<FEnG_#7jU`\\i^8GA55Np)Z08OpIm110VOp_;]+\\S\"]<%K.CgmdEpe:#I8](`s&&'l@DBB%YpkWP5P4de6-2i0Pa_n\"FmI93\\YD:XH>73j:cP^Hcg@^-X`,ZsnrNVN2ua*ggp<j~>endstream\nendobj\nxref\n0 9\n0000000000 65535 f \n0000000061 00000 n \n0000000102 00000 n \n0000000209 00000 n \n0000000321 00000 n \n0000000524 00000 n \n0000000592 00000 n \n0000000913 00000 n \n0000000972 00000 n \ntrailer\n<<\n/ID \n[<76650e0989810882ff622ee205566622><76650e0989810882ff622ee205566622>]\n% ReportLab generated PDF document -- digest (opensource)\n\n/Info 6 0 R\n/Root 5 0 R\n/Size 9\n>>\nstartxref\n3924\n%%EOF\n",
+      "analysis": {
+        "summary": "%PDF-1.4 %���� ReportLab Generated PDF document (opensource) 1 0 obj << /F1 2 0 R /F2 3 0 R >> endobj 2 0 obj << /BaseFont /Helvetica /Encoding /WinAnsiEncoding /Name /F1 /Subtype /Type1 /Type /Font >> endobj 3 0 obj << /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding /Name /F2 /Subtype /Type1 /Type /Font >> endobj 4 0 obj << /Contents 8 0 R /MediaBox [ 0 0 841.8898 595.2756 ] /Parent 7 0 R /Resources << /Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ] >> /Rotate 0 /Trans << >> /Type /Page >> endobj 5 0 obj << /PageMode /UseNone /Pages 7 0 R /Type /Catalog >> endobj 6 0 obj << /Author (Sample data) /CreationDate (D:20260929072341+00'00') /Creator (\\(unspecified\\)) /Keywords ()",
+        "extractionFallback": true,
+        "figuresFound": false,
+        "findings": [
+          {
+            "finding": "Measured thickness 8.1 mm is below the SOP minimum of 8.5 mm.",
+            "measured": 8.1,
+            "minimum": 8.5,
+            "margin": -0.4,
+            "verdict": "follow-up inspection required",
+            "confidence": 0.94
+          }
+        ],
+        "citations": [
+          {
+            "source": "SOP-114 Pressure vessel inspection.pdf",
+            "clearance": "Internal",
+            "page": 12,
+            "quote": "Minimum permissible shell thickness for class II vessels is 8.5 mm after corrosion allowance."
+          },
+          {
+            "source": "SOP-114 Pressure vessel inspection.pdf",
+            "clearance": "Internal",
+            "page": 12,
+            "quote": "Measured thickness below the minimum requires a follow-up inspection before the vessel is returned to service."
+          },
+          {
+            "source": "SOP-114 Pressure vessel inspection.pdf",
+            "clearance": "Internal",
+            "page": 14,
+            "quote": "Ultrasonic thickness readings shall be recorded at five grid points on the shell and two on the head."
+          }
+        ]
+      }
+    }
+  ],
+  "audit": [
+    {
+      "id": "99621022-7100-474a-b14e-41a3a2e8d472",
+      "time": "2026-09-29T14:30:33.885Z",
+      "user": "manager@demo.local",
+      "action": "sandbox_run",
+      "resource": "task.py",
+      "model": "docker (python:3.11-slim, --network none)",
+      "result": "pass",
+      "note": "1951ms · exit 0",
+      "prevHash": "32de72d35e71030fc31742f9d3e48786839eed12bb75e1677736166ab4f89b3f",
+      "hash": "0e5b6327a430257ac5f6b1cfcb3f2145bdfd6a7fdd21755a02a00a4796c13a8b"
+    },
+    {
+      "id": "fc22e6c9-e038-48b6-b382-b2700894c8a8",
+      "time": "2026-09-29T14:29:54.875Z",
+      "user": "manager@demo.local",
+      "action": "ai_code_solve",
+      "resource": "/code/solve",
+      "model": "agent_service",
+      "result": "ok",
+      "note": "clearance Restricted",
+      "prevHash": "9e84f0f24d674d60f0cdaf992211dae93ff3c5db798c63bd145d63bef55ea4bf",
+      "hash": "32de72d35e71030fc31742f9d3e48786839eed12bb75e1677736166ab4f89b3f"
+    },
+    {
+      "id": "f112d44f-540c-4406-ab43-cb7fcfea6aef",
+      "time": "2026-09-29T14:29:12.762Z",
+      "user": "manager@demo.local",
+      "action": "calc_run",
+      "resource": "margin 8.1-8.5 mm",
+      "model": "docker (python:3.11-slim, --network none)",
+      "result": "-0.40 mm",
+      "note": "1862ms · assistive, engineer-verified",
+      "prevHash": "1ca3b885f2a54e3507f5884898570651604608205a6f0b4ffff22bc5d2c99b73",
+      "hash": "9e84f0f24d674d60f0cdaf992211dae93ff3c5db798c63bd145d63bef55ea4bf"
+    },
+    {
+      "id": "b6185e8a-f4c0-473c-9d44-935390896ef8",
+      "time": "2026-09-29T14:27:04.665Z",
+      "user": "manager@demo.local",
+      "action": "vision_analysis",
+      "resource": "Gemini_Generated_Image_a8kwz3a8kwz3a8kw.png",
+      "model": "vision (qwen2.5vl:3b)",
+      "result": "ok",
+      "note": "drawing",
+      "prevHash": "ac5dc35b7e9e9b2ca33a725081a94eadd15f5dafe39b9d29204d6a408aa2c820",
+      "hash": "1ca3b885f2a54e3507f5884898570651604608205a6f0b4ffff22bc5d2c99b73"
+    },
+    {
+      "id": "28a76587-3036-40a4-be46-b67ee7f004f3",
+      "time": "2026-09-29T12:57:02.292Z",
+      "user": "manager@demo.local",
+      "action": "ai_code_solve",
+      "resource": "/code/solve",
+      "model": "agent_service",
+      "result": "ok",
+      "note": "clearance Restricted",
+      "prevHash": "17c9b1fc5cd703c665f09858ffbb13175475accc861552af98344d169b94a033",
+      "hash": "ac5dc35b7e9e9b2ca33a725081a94eadd15f5dafe39b9d29204d6a408aa2c820"
+    },
+    {
+      "id": "e6a6a226-8402-4d0e-9f6d-40a398e71cb1",
+      "time": "2026-09-29T12:56:07.583Z",
+      "user": "manager@demo.local",
+      "action": "sandbox_run",
+      "resource": "task.py",
+      "model": "docker (python:3.11-slim, --network none)",
+      "result": "fail",
+      "note": "970ms · exit 1",
+      "prevHash": "9dddfbeff423b7528c0c9cdee447fa0244d54c35c71f95308feb6e6f9937ca2d",
+      "hash": "17c9b1fc5cd703c665f09858ffbb13175475accc861552af98344d169b94a033"
+    },
+    {
+      "id": "1bb3e40e-8942-45a6-aec6-f43f01868879",
+      "time": "2026-09-29T12:55:54.815Z",
+      "user": "manager@demo.local",
+      "action": "ai_code_solve",
+      "resource": "/code/solve",
+      "model": "agent_service",
+      "result": "ok",
+      "note": "clearance Restricted",
+      "prevHash": "5ae3a8a30d77a60edff6ed077a7e447a22bfefdcac9dc19941e5df39a5dcd0d3",
+      "hash": "9dddfbeff423b7528c0c9cdee447fa0244d54c35c71f95308feb6e6f9937ca2d"
+    },
+    {
+      "id": "91580549-7c7b-4c98-acab-17538538cb9f",
+      "time": "2026-09-29T12:55:21.198Z",
+      "user": "manager@demo.local",
+      "action": "ai_code_solve",
+      "resource": "/code/solve",
+      "model": "agent_service",
+      "result": "ok",
+      "note": "clearance Restricted",
+      "prevHash": "48464d6d953061c4d5a5dc725839e5b20501b308e6e2d07ee5a45ef1425dc6c4",
+      "hash": "5ae3a8a30d77a60edff6ed077a7e447a22bfefdcac9dc19941e5df39a5dcd0d3"
+    },
+    {
+      "id": "be81ea66-4a24-4531-bb48-b858d71d2112",
+      "time": "2026-09-29T12:54:22.144Z",
+      "user": "manager@demo.local",
+      "action": "calc_run",
+      "resource": "margin 8.1-8.5 mm",
+      "model": "docker (python:3.11-slim, --network none)",
+      "result": "-0.40 mm",
+      "note": "897ms · assistive, engineer-verified",
+      "prevHash": "a42821964dce54d2a6eddb229827b10f2421aab72bce9284f609be2aefacd6ff",
+      "hash": "48464d6d953061c4d5a5dc725839e5b20501b308e6e2d07ee5a45ef1425dc6c4"
+    },
+    {
+      "id": "5c1062e7-0ab9-4deb-8641-f6b22facc938",
+      "time": "2026-09-29T12:54:03.402Z",
+      "user": "manager@demo.local",
+      "action": "knowledge_query",
+      "resource": "What is the minimum shell thickness for P-101?",
+      "model": "retrieval-only",
+      "result": "fallback",
+      "note": "6 chunks, clearance Restricted",
+      "prevHash": "e933dee866ed2bc62ab46c7b20e7d2b30353ba6d3518d4a3a8ee0fa946e066c7",
+      "hash": "a42821964dce54d2a6eddb229827b10f2421aab72bce9284f609be2aefacd6ff"
+    },
+    {
+      "id": "5a2c66a5-8507-4a71-b34f-d9bd2dfa2892",
+      "time": "2026-09-29T12:53:29.704Z",
+      "user": "manager@demo.local",
+      "action": "pid_tags_extracted",
+      "resource": "638ee824bfa67ffb3a87548c6db68305.jpg",
+      "model": "regex+kb-crosscheck",
+      "result": "0 tags",
+      "note": "missing=0 mismatch=0",
+      "prevHash": "1aa4ea7575aa4eae8c39a51cf25c06351929b504598f12b20d12cfa93da3c842",
+      "hash": "e933dee866ed2bc62ab46c7b20e7d2b30353ba6d3518d4a3a8ee0fa946e066c7"
+    },
+    {
+      "id": "884b84bf-2d4f-424a-93b4-2885334938a2",
+      "time": "2026-09-29T12:53:29.594Z",
+      "user": "manager@demo.local",
+      "action": "file_upload",
+      "resource": "638ee824bfa67ffb3a87548c6db68305.jpg",
+      "model": "direct text read",
+      "result": "stored-locally",
+      "note": "clean",
+      "prevHash": "a2497159e7158411be84f2b68cf2de19570a6bb94990a55a84f6038db19383dc",
+      "hash": "1aa4ea7575aa4eae8c39a51cf25c06351929b504598f12b20d12cfa93da3c842"
+    },
+    {
+      "id": "2488262b-9c29-4ecd-b54c-cfbe4e438623",
+      "time": "2026-09-29T12:53:17.229Z",
+      "user": "manager@demo.local",
+      "action": "model_registered",
+      "resource": "Gemma-3-12B-Vision",
+      "model": "gemma-3-12b-vision-5",
+      "result": "hot-added to registry",
+      "note": "capabilities: vision, reasoning",
+      "prevHash": "cd8ce59e482759e0a7e246381bf03b386e453e9e7f578d6ad850a161e16b88f9",
+      "hash": "a2497159e7158411be84f2b68cf2de19570a6bb94990a55a84f6038db19383dc"
+    },
+    {
+      "id": "683d63e1-e312-435a-b9f7-04b809cfc368",
+      "time": "2026-09-29T07:36:51.669Z",
+      "user": "engineer@demo.local",
+      "action": "ai_code_solve",
+      "resource": "/code/solve",
+      "model": "agent_service",
+      "result": "ok",
+      "note": "clearance Internal",
+      "prevHash": "20bd1a3eef59a45fe376be78f4c92d9c954f3ff6ee98e47a26673442138c45ee",
+      "hash": "cd8ce59e482759e0a7e246381bf03b386e453e9e7f578d6ad850a161e16b88f9"
+    },
+    {
+      "id": "9d9905f1-fa82-40d1-9844-19b76210d2e7",
+      "time": "2026-09-29T07:36:18.698Z",
+      "user": "engineer@demo.local",
+      "action": "calc_run",
+      "resource": "margin 8.1-8.5 mm",
+      "model": "local python — Docker engine not running",
+      "result": "-0.40 mm",
+      "note": "2524ms · assistive, engineer-verified",
+      "prevHash": "ecdc352b92d1de8da7e6c21d6c1cb0e12cea862e6499389c5c85759e029e3ed1",
+      "hash": "20bd1a3eef59a45fe376be78f4c92d9c954f3ff6ee98e47a26673442138c45ee"
+    },
+    {
+      "id": "aed0e8b2-a6b5-4be0-8251-6a15d063efd1",
+      "time": "2026-09-29T07:35:07.975Z",
+      "user": "engineer@demo.local",
+      "action": "sandbox_run",
+      "resource": "task.py",
+      "model": "local python — Docker engine not running",
+      "result": "pass",
+      "note": "2600ms · exit 0",
+      "prevHash": "2980b30f6f2510242528726ef233977e2b6f310b35250cd8c4a37918dea278ca",
+      "hash": "ecdc352b92d1de8da7e6c21d6c1cb0e12cea862e6499389c5c85759e029e3ed1"
+    },
+    {
+      "id": "ddfdf79f-c7a6-4e91-9fd6-750ac4ba4eef",
+      "time": "2026-09-29T07:34:56.550Z",
+      "user": "engineer@demo.local",
+      "action": "calc_run",
+      "resource": "margin 8.1-8.5 mm",
+      "model": "local python — Docker engine not running",
+      "result": "-0.40 mm",
+      "note": "3920ms · assistive, engineer-verified",
+      "prevHash": "23b9adb964b22f3a6405fc64e876fea9d87467ddce9459417a6c59504c2a1811",
+      "hash": "2980b30f6f2510242528726ef233977e2b6f310b35250cd8c4a37918dea278ca"
+    },
+    {
+      "id": "61b11f9c-796e-44ba-aacc-7b711074db46",
+      "time": "2026-09-29T07:34:49.075Z",
+      "user": "engineer@demo.local",
+      "action": "evaluation_run",
+      "resource": "agent task harness",
+      "model": "local",
+      "result": "2 live task(s)",
+      "note": "",
+      "prevHash": "4ea696fa0ae4cd443681e51ed1de0545048ae7245a553cacd78678921e8fc620",
+      "hash": "23b9adb964b22f3a6405fc64e876fea9d87467ddce9459417a6c59504c2a1811"
+    },
+    {
+      "id": "390e97f7-de2a-430e-8b8d-43be52ce753e",
+      "time": "2026-09-29T07:34:45.547Z",
+      "user": "engineer@demo.local",
+      "action": "evaluation_run",
+      "resource": "agent task harness",
+      "model": "local",
+      "result": "2 live task(s)",
+      "note": "",
+      "prevHash": "7ec045376c1fb45cb8bb2daf42304a1893a4fca0a3cec1106ce86ba2c14664dd",
+      "hash": "4ea696fa0ae4cd443681e51ed1de0545048ae7245a553cacd78678921e8fc620"
+    },
+    {
+      "id": "17237dff-8aa5-4f5a-bd62-cea9b80c094e",
+      "time": "2026-09-29T07:34:36.450Z",
+      "user": "engineer@demo.local",
+      "action": "project_created",
+      "resource": "gwquidgi\\",
+      "model": "gateway",
+      "result": "Private",
+      "note": "",
+      "prevHash": "5cf1f780bd6b2d88d4b92ceec9a69f4c9331e57a73f581673c9a301bcb204bff",
+      "hash": "7ec045376c1fb45cb8bb2daf42304a1893a4fca0a3cec1106ce86ba2c14664dd"
+    },
+    {
+      "id": "e4d184d1-b266-4be0-9401-646b7cdb719e",
+      "time": "2026-09-29T07:31:25.525Z",
+      "user": "engineer@demo.local",
+      "action": "knowledge_query",
+      "resource": "who is the inspector of P-101",
+      "model": "retrieval-only",
+      "result": "fallback",
+      "note": "3 chunks, clearance Internal",
+      "prevHash": "3a795fb8d2fd9da4b60b8d5e2d0f9ba9e51425afb59b821c27d9481b68820dde",
+      "hash": "5cf1f780bd6b2d88d4b92ceec9a69f4c9331e57a73f581673c9a301bcb204bff"
+    },
+    {
+      "id": "3f4cf760-8b9f-43cc-bc50-f979d468934e",
+      "time": "2026-09-29T07:31:12.376Z",
+      "user": "engineer@demo.local",
+      "action": "kb_seed",
+      "resource": "sample SOPs",
+      "model": "agent_service",
+      "result": "ok",
+      "note": "4 documents",
+      "prevHash": "8e02c27a40cdf0a11a28d841666daeab4e30a8b5921ac6603954ce2ab46fe74c",
+      "hash": "3a795fb8d2fd9da4b60b8d5e2d0f9ba9e51425afb59b821c27d9481b68820dde"
+    },
+    {
+      "id": "4dbc55b0-cf7e-4e05-a52d-d663857376d2",
+      "time": "2026-09-29T07:31:10.844Z",
+      "user": "engineer@demo.local",
+      "action": "knowledge_query",
+      "resource": "who is the inspector of P-101",
+      "model": "retrieval-only",
+      "result": "fallback",
+      "note": "3 chunks, clearance Internal",
+      "prevHash": "b65776f1224a8e0a096163fdf57ff5913894304e4b3d94db63215e270c8425c8",
+      "hash": "8e02c27a40cdf0a11a28d841666daeab4e30a8b5921ac6603954ce2ab46fe74c"
+    },
+    {
+      "id": "9de2af3d-160b-4eec-b0f7-1c468d61728b",
+      "time": "2026-09-29T07:31:01.910Z",
+      "user": "engineer@demo.local",
+      "action": "ai_kb_answer",
+      "resource": "/kb/answer",
+      "model": "agent_service",
+      "result": "ok",
+      "note": "clearance Internal",
+      "prevHash": "06cb71990e89e7848441551b283a82209cc1715307eb1fc7b9370df3bc5b1801",
+      "hash": "b65776f1224a8e0a096163fdf57ff5913894304e4b3d94db63215e270c8425c8"
+    },
+    {
+      "id": "6bedb4d9-1a89-4c3f-820f-03f190beaefa",
+      "time": "2026-09-29T07:30:40.451Z",
+      "user": "engineer@demo.local",
+      "action": "knowledge_query",
+      "resource": "who is the inspector of P-101",
+      "model": "retrieval-only",
+      "result": "fallback",
+      "note": "3 chunks, clearance Internal",
+      "prevHash": "2eba5fbfeb9da61476b151366dc9307e8bdea895df9612e6e18296b380db1b90",
+      "hash": "06cb71990e89e7848441551b283a82209cc1715307eb1fc7b9370df3bc5b1801"
+    },
+    {
+      "id": "cac8a92f-c5ad-4b55-90aa-8e04a685a935",
+      "time": "2026-09-29T07:30:28.400Z",
+      "user": "engineer@demo.local",
+      "action": "knowledge_query",
+      "resource": "who is the inspector of P-101",
+      "model": "retrieval-only",
+      "result": "fallback",
+      "note": "3 chunks, clearance Internal",
+      "prevHash": "112cec829bcbe4269c0da8cca3b35ac8e56849d841cbee2a30c201ffa56eded2",
+      "hash": "2eba5fbfeb9da61476b151366dc9307e8bdea895df9612e6e18296b380db1b90"
+    },
+    {
+      "id": "018eccb7-ec4d-4e4c-bd9d-23013fdf5711",
+      "time": "2026-09-29T07:30:12.838Z",
+      "user": "engineer@demo.local",
+      "action": "kb_ingest",
+      "resource": "sample_inspection_log.pdf",
+      "model": "agent_service",
+      "result": "ingested",
+      "note": "15 chunks · Internal",
+      "prevHash": "22ebcf3cb67f26a2369464f0e492b3bab9416d3fed0b4d63db148404cc60c210",
+      "hash": "112cec829bcbe4269c0da8cca3b35ac8e56849d841cbee2a30c201ffa56eded2"
+    },
+    {
+      "id": "d3302474-a71f-4ae9-b0a9-49b20f72e907",
+      "time": "2026-09-29T07:29:59.431Z",
+      "user": "engineer@demo.local",
+      "action": "kb_seed",
+      "resource": "sample SOPs",
+      "model": "agent_service",
+      "result": "ok",
+      "note": "4 documents",
+      "prevHash": "fb1a7da36f77fa1c7cf0c6e5cff71f39000a6b95144a0ecf46e16f3098181f50",
+      "hash": "22ebcf3cb67f26a2369464f0e492b3bab9416d3fed0b4d63db148404cc60c210"
+    },
+    {
+      "id": "01618d00-2dc3-4c18-9467-d1bf273d917e",
+      "time": "2026-09-29T07:29:54.324Z",
+      "user": "engineer@demo.local",
+      "action": "knowledge_query",
+      "resource": "who is the inspector of P-101",
+      "model": "retrieval-only",
+      "result": "fallback",
+      "note": "3 chunks, clearance Internal",
+      "prevHash": "5f7734136cf46ad606e01c2c079e8c6a89dacb650d0a44921d93e50400997398",
+      "hash": "fb1a7da36f77fa1c7cf0c6e5cff71f39000a6b95144a0ecf46e16f3098181f50"
+    },
+    {
+      "id": "50519a10-05d1-486e-ab67-d503b5a58552",
+      "time": "2026-09-29T07:29:04.429Z",
+      "user": "engineer@demo.local",
+      "action": "pid_tags_extracted",
+      "resource": "sample_inspection_log.pdf",
+      "model": "regex+kb-crosscheck",
+      "result": "0 tags",
+      "note": "missing=0 mismatch=0",
+      "prevHash": "ac7ae2e167079df2d120ea18868a233a54f69024b79d803034e64e870e9940dd",
+      "hash": "5f7734136cf46ad606e01c2c079e8c6a89dacb650d0a44921d93e50400997398"
+    },
+    {
+      "id": "7e681b1a-dca6-49ca-bbd3-36f07d1202fb",
+      "time": "2026-09-29T07:29:04.298Z",
+      "user": "engineer@demo.local",
+      "action": "file_upload",
+      "resource": "sample_inspection_log.pdf",
+      "model": "direct text read",
+      "result": "stored-locally",
+      "note": "clean",
+      "prevHash": "f7d67cadc26a95069244783e9c5a9d0c715146b098192aac58ae59f1a6fcc5b5",
+      "hash": "ac7ae2e167079df2d120ea18868a233a54f69024b79d803034e64e870e9940dd"
+    },
+    {
+      "id": "55ab9151-ba67-4fb9-8231-3b8b0bdf135f",
+      "time": "2026-09-29T07:29:00.224Z",
+      "user": "engineer@demo.local",
+      "action": "ai_agent_run",
+      "resource": "/agent/run",
+      "model": "agent_service",
+      "result": "ok",
+      "note": "clearance Internal",
+      "prevHash": "bb25ddb1fbe79378eb1825edbdcfd9ed61e11d71f21d8c02a2ca3793c087840d",
+      "hash": "f7d67cadc26a95069244783e9c5a9d0c715146b098192aac58ae59f1a6fcc5b5"
+    },
+    {
+      "id": "c85eb258-9558-462d-993c-5357e9489a27",
+      "time": "2026-09-29T07:28:46.982Z",
+      "user": "engineer@demo.local",
+      "action": "approval_note_generated",
+      "resource": "task_6cbe8b54-e7bc-49c7-a479-b10eaea943d8",
+      "model": "Qwen2.5-14B-Instruct",
+      "result": "awaiting-approval",
+      "note": "447c2a977ffb20e08bd5bd01bf228794854b99a50803ffd1cfb40c1ebeafb2d7",
+      "prevHash": "94ca2a8d96a3db6a8521afda50fdab3df16789d08e24fab5760541594416f33e",
+      "hash": "bb25ddb1fbe79378eb1825edbdcfd9ed61e11d71f21d8c02a2ca3793c087840d"
+    },
+    {
+      "id": "9bbc9687-83ac-479a-8280-fabdd9a9c52e",
+      "time": "2026-09-29T07:28:46.843Z",
+      "user": "engineer@demo.local",
+      "action": "agent_plan",
+      "resource": "task_6cbe8b54-e7bc-49c7-a479-b10eaea943d8",
+      "model": "Qwen2.5-14B-Instruct",
+      "result": "ok",
+      "note": "",
+      "prevHash": "05bc61355244113692464f6631344b90b96bb531b47ad9f730b1c4d2246f1a10",
+      "hash": "94ca2a8d96a3db6a8521afda50fdab3df16789d08e24fab5760541594416f33e"
+    },
+    {
+      "id": "7bbf6d06-95ed-4f06-aee2-efce6bcd45e4",
+      "time": "2026-09-29T07:28:46.818Z",
+      "user": "engineer@demo.local",
+      "action": "task_created",
+      "resource": "task_6cbe8b54-e7bc-49c7-a479-b10eaea943d8",
+      "model": "Qwen2.5-14B-Instruct",
+      "result": "queued",
+      "note": "[live router] document scan (matched: PDF attached, PDF attached) Routed to Qwen2.5-14B-Instruct (reasoning).",
+      "prevHash": "b07bc81fb94d2a0d767c6d7ca10be581991270d0b8ed5c2ae72c8a121f171a89",
+      "hash": "05bc61355244113692464f6631344b90b96bb531b47ad9f730b1c4d2246f1a10"
+    },
+    {
+      "id": "900dcfd2-613f-4a9b-878e-5269a480094f",
+      "time": "2026-09-29T07:28:45.114Z",
+      "user": "engineer@demo.local",
+      "action": "file_upload",
+      "resource": "sample_inspection_log.pdf",
+      "model": "direct text read",
+      "result": "stored-locally",
+      "note": "clean",
+      "prevHash": "480fc8f78b82988eca6f0f8bbaa159d5ff6f9f5030897f0aff3403a957047e0e",
+      "hash": "b07bc81fb94d2a0d767c6d7ca10be581991270d0b8ed5c2ae72c8a121f171a89"
+    },
+    {
+      "id": "d1ff177a-186c-4274-8b0d-6a991c4b4af2",
+      "time": "2026-09-29T07:28:45.075Z",
+      "user": "engineer@demo.local",
+      "action": "file_upload",
+      "resource": "sample_inspection_log.pdf",
+      "model": "direct text read",
+      "result": "stored-locally",
+      "note": "clean",
+      "prevHash": "3fd07cf24cefb67c880c83a3c7f9b76ce912e52a99d4e50950f7e77a4f2f3585",
+      "hash": "480fc8f78b82988eca6f0f8bbaa159d5ff6f9f5030897f0aff3403a957047e0e"
+    },
+    {
+      "id": "6a24ac46-800c-4ae1-8fde-69349b98abb6",
+      "time": "2026-09-29T07:27:41.892Z",
+      "user": "engineer@demo.local",
+      "action": "pid_tags_extracted",
+      "resource": "sample_inspection_log.pdf",
+      "model": "regex+kb-crosscheck",
+      "result": "0 tags",
+      "note": "missing=0 mismatch=0",
+      "prevHash": "56e2d15d6401d9c2bdd48b1b7a8a04ec9f7c58a92e995eafab7e7cb0a34f16ea",
+      "hash": "3fd07cf24cefb67c880c83a3c7f9b76ce912e52a99d4e50950f7e77a4f2f3585"
+    },
+    {
+      "id": "cdde3d66-db19-48e8-ad35-8e727784566a",
+      "time": "2026-09-29T07:27:41.773Z",
+      "user": "engineer@demo.local",
+      "action": "file_upload",
+      "resource": "sample_inspection_log.pdf",
+      "model": "direct text read",
+      "result": "stored-locally",
+      "note": "clean",
+      "prevHash": "66dca033a9ae26dbf513d31e21ec835f08eb717335337025946ba41f6a89607d",
+      "hash": "56e2d15d6401d9c2bdd48b1b7a8a04ec9f7c58a92e995eafab7e7cb0a34f16ea"
+    },
+    {
+      "id": "93a5599c-055f-49c3-a98e-ab18d760f98f",
+      "time": "2026-09-29T07:25:44.222Z",
+      "user": "engineer@demo.local",
+      "action": "pid_tags_extracted",
+      "resource": "productionsection.pdf",
+      "model": "regex+kb-crosscheck",
+      "result": "105 tags",
+      "note": "missing=105 mismatch=0",
+      "prevHash": "bdd1d01fc91e7c154afd57697b08bce9d335f8dafb75d8ef626f3f7369e61f31",
+      "hash": "66dca033a9ae26dbf513d31e21ec835f08eb717335337025946ba41f6a89607d"
+    },
+    {
+      "id": "0b72b88f-6d11-4d6b-bda3-722678df4860",
+      "time": "2026-09-29T07:25:44.154Z",
+      "user": "engineer@demo.local",
+      "action": "file_upload",
+      "resource": "productionsection.pdf",
+      "model": "direct text read",
+      "result": "stored-locally",
+      "note": "clean",
+      "prevHash": "932f00676026dbd069af6b9acc844f97986f2c2126b3920927e9a50c40db09b9",
+      "hash": "bdd1d01fc91e7c154afd57697b08bce9d335f8dafb75d8ef626f3f7369e61f31"
+    },
+    {
+      "id": "365ecd0b-bff9-4dbe-be49-542de5438e1e",
+      "time": "2026-09-29T07:25:24.891Z",
+      "user": "engineer@demo.local",
+      "action": "approval_note_generated",
+      "resource": "task_5df2a86e-07bf-44e7-9502-f00978fbade0",
+      "model": "Qwen2.5-14B-Instruct",
+      "result": "awaiting-approval",
+      "note": "6b9af550d8c8d9aef8e389236a8718a992ad7139ad5e9065dbe86b625a467ea5",
+      "prevHash": "e991e355336ada7d88486cef237cfe162baa5b30b1aa6b8b64808de16ba36214",
+      "hash": "932f00676026dbd069af6b9acc844f97986f2c2126b3920927e9a50c40db09b9"
+    },
+    {
+      "id": "f66e9242-9278-43dd-9a14-ae9317b07d44",
+      "time": "2026-09-29T07:25:24.647Z",
+      "user": "engineer@demo.local",
+      "action": "agent_plan",
+      "resource": "task_5df2a86e-07bf-44e7-9502-f00978fbade0",
+      "model": "Qwen2.5-14B-Instruct",
+      "result": "ok",
+      "note": "",
+      "prevHash": "e229a8b8bcc6c6f000ec399462188747839af56adbff61159e96681697738f1b",
+      "hash": "e991e355336ada7d88486cef237cfe162baa5b30b1aa6b8b64808de16ba36214"
+    },
+    {
+      "id": "41f1ed2e-9b3b-42b3-b4ad-43f5eb451731",
+      "time": "2026-09-29T07:25:24.593Z",
+      "user": "engineer@demo.local",
+      "action": "task_created",
+      "resource": "task_5df2a86e-07bf-44e7-9502-f00978fbade0",
+      "model": "Qwen2.5-14B-Instruct",
+      "result": "queued",
+      "note": "[live router] document scan (matched: PDF attached) Routed to Qwen2.5-14B-Instruct (reasoning).",
+      "prevHash": "4b6cbace0faee3107a30fa8c587e971d2dcbe353882484794f72563634f21898",
+      "hash": "e229a8b8bcc6c6f000ec399462188747839af56adbff61159e96681697738f1b"
+    },
+    {
+      "id": "9f63b75c-4409-458a-880f-97f3c516f85a",
+      "time": "2026-09-29T07:25:22.629Z",
+      "user": "engineer@demo.local",
+      "action": "file_upload",
+      "resource": "sample_inspection_log.pdf",
+      "model": "direct text read",
+      "result": "stored-locally",
+      "note": "clean",
+      "prevHash": "8e9d7d4bdc468011a84b8255eb9d81dcd06e30ae79de7ebbd988c82c88fad6ab",
+      "hash": "4b6cbace0faee3107a30fa8c587e971d2dcbe353882484794f72563634f21898"
+    },
+    {
+      "id": "e398a84f-ccf3-4ad5-8093-f1259aac11cc",
+      "time": "2026-09-29T07:24:43.634Z",
+      "user": "engineer@demo.local",
+      "action": "calc_run",
+      "resource": "margin 8.1-8.5 mm",
+      "model": "local python — Docker engine not running",
+      "result": "-0.40 mm",
+      "note": "1823ms · assistive, engineer-verified",
+      "prevHash": "35c5b73ce0b180f458b8e42a73512c97374bb03a7189c7542d0dad59ba2e0223",
+      "hash": "8e9d7d4bdc468011a84b8255eb9d81dcd06e30ae79de7ebbd988c82c88fad6ab"
+    },
+    {
+      "id": "77002472-8dc8-446b-8b6e-a76ed1dd2032",
+      "time": "2026-09-29T07:24:33.932Z",
+      "user": "engineer@demo.local",
+      "action": "pid_tags_extracted",
+      "resource": "sample_inspection_log.pdf",
+      "model": "regex+kb-crosscheck",
+      "result": "0 tags",
+      "note": "missing=0 mismatch=0",
+      "prevHash": "d0207ef5bad0c386a359b5befa9028b06f76ff965723178591ac81405b057661",
+      "hash": "35c5b73ce0b180f458b8e42a73512c97374bb03a7189c7542d0dad59ba2e0223"
+    },
+    {
+      "id": "2cf9e9a9-79fa-4ed1-a161-fc759656c324",
+      "time": "2026-09-29T07:24:33.815Z",
+      "user": "engineer@demo.local",
+      "action": "file_upload",
+      "resource": "sample_inspection_log.pdf",
+      "model": "direct text read",
+      "result": "stored-locally",
+      "note": "clean",
+      "prevHash": "8dec858f5dc3078ec965b30fdb065ecab89f4d99c84d26a9083cb1b88e0e7f87",
+      "hash": "d0207ef5bad0c386a359b5befa9028b06f76ff965723178591ac81405b057661"
+    },
+    {
+      "id": "56ea9c82-b28e-48de-a7f6-8e6f343f0784",
+      "time": "2026-09-29T07:23:59.329Z",
+      "user": "engineer@demo.local",
+      "action": "pid_tags_extracted",
+      "resource": "sample_inspection_log.pdf",
+      "model": "regex+kb-crosscheck",
+      "result": "0 tags",
+      "note": "missing=0 mismatch=0",
+      "prevHash": "e063c2016005cc8b6d522fcb2cd5c63a49e073120399cf51abab7cbc9e9ceb70",
+      "hash": "8dec858f5dc3078ec965b30fdb065ecab89f4d99c84d26a9083cb1b88e0e7f87"
+    },
+    {
+      "id": "f7600c4d-2e28-48fb-9164-379192cda120",
+      "time": "2026-09-29T07:23:59.188Z",
+      "user": "engineer@demo.local",
+      "action": "file_upload",
+      "resource": "sample_inspection_log.pdf",
+      "model": "direct text read",
+      "result": "stored-locally",
+      "note": "clean",
+      "prevHash": "f64d883e9b4bca885e8f2cbef907016ffe1126407e7e22b59b4ce22a62811adf",
+      "hash": "e063c2016005cc8b6d522fcb2cd5c63a49e073120399cf51abab7cbc9e9ceb70"
+    },
+    {
+      "id": "19e44681-893b-4d3f-8bc1-d070270cd439",
+      "time": "2026-09-29T07:18:03.984Z",
+      "user": "engineer@demo.local",
+      "action": "pid_tags_extracted",
+      "resource": "MPR-JULY-26.pdf",
+      "model": "regex+kb-crosscheck",
+      "result": "0 tags",
+      "note": "missing=0 mismatch=0",
+      "prevHash": "c83edcff81e0053e1297ee9441659209c99c23e17b6d16cb3ed95265ee3a00f1",
+      "hash": "f64d883e9b4bca885e8f2cbef907016ffe1126407e7e22b59b4ce22a62811adf"
+    },
+    {
+      "id": "0376d3fb-1e91-4085-a773-812910ca9a0e",
+      "time": "2026-09-29T07:18:03.838Z",
+      "user": "engineer@demo.local",
+      "action": "file_upload",
+      "resource": "MPR-JULY-26.pdf",
+      "model": "direct text read",
+      "result": "stored-locally",
+      "note": "clean",
+      "prevHash": "8567e1797a2685de498d498b325b720c6f56d5cfe1cdc0dcbb685436648a964b",
+      "hash": "c83edcff81e0053e1297ee9441659209c99c23e17b6d16cb3ed95265ee3a00f1"
+    },
+    {
+      "id": "1f539c13-8fd3-4250-9407-e6739901aeb2",
+      "time": "2026-09-29T07:17:05.193Z",
+      "user": "engineer@demo.local",
+      "action": "pid_tags_extracted",
+      "resource": "6_Wheel_Rover_Consolidated_Design_Report (1).pdf",
+      "model": "regex+kb-crosscheck",
+      "result": "0 tags",
+      "note": "missing=0 mismatch=0",
+      "prevHash": "fdf8c599055b82ba9b41992dac4067ad6ed1ceb4db529ea177fc67e99df63fd7",
+      "hash": "8567e1797a2685de498d498b325b720c6f56d5cfe1cdc0dcbb685436648a964b"
+    },
+    {
+      "id": "a117c61e-b033-49c9-a4ca-e578aa6fd519",
+      "time": "2026-09-29T07:17:05.135Z",
+      "user": "engineer@demo.local",
+      "action": "file_upload",
+      "resource": "6_Wheel_Rover_Consolidated_Design_Report (1).pdf",
+      "model": "direct text read",
+      "result": "stored-locally",
+      "note": "clean",
+      "prevHash": "a7953871f8553b712a834ccb395faf368e9a82ff8d9b27590159a41a1580c4ee",
+      "hash": "fdf8c599055b82ba9b41992dac4067ad6ed1ceb4db529ea177fc67e99df63fd7"
+    },
+    {
+      "id": "73d8aaa3-b106-4ab4-ae1d-49ba453eb444",
+      "time": "2026-09-29T07:16:02.332Z",
+      "user": "engineer@demo.local",
+      "action": "deliverable_generated",
+      "resource": "PID_Tags_1790666162274.xlsx",
+      "model": "excel",
+      "result": "105 tags",
+      "note": "",
+      "prevHash": "5f0be6cd066b3e9a357be5f81eeb505a572ea4d8e1c6f0a83032242b902d3c79",
+      "hash": "a7953871f8553b712a834ccb395faf368e9a82ff8d9b27590159a41a1580c4ee"
+    },
+    {
+      "id": "de44a402-d672-49d7-8881-b410fa1401b2",
+      "time": "2026-09-29T07:15:44.043Z",
+      "user": "engineer@demo.local",
+      "action": "pid_tags_extracted",
+      "resource": "productionsection.pdf",
+      "model": "regex+kb-crosscheck",
+      "result": "105 tags",
+      "note": "missing=105 mismatch=0",
+      "prevHash": "2079205766bb1d311e04e8d7aaafbc283d7c703942b0e5330765bac3a0fa45ac",
+      "hash": "5f0be6cd066b3e9a357be5f81eeb505a572ea4d8e1c6f0a83032242b902d3c79"
+    },
+    {
+      "id": "9b5f7f7f-87b2-4e0d-9c33-9678ac0596d6",
+      "time": "2026-09-29T07:15:43.978Z",
+      "user": "engineer@demo.local",
+      "action": "file_upload",
+      "resource": "productionsection.pdf",
+      "model": "direct text read",
+      "result": "stored-locally",
+      "note": "clean",
+      "prevHash": "092cfe600a1723244a03445641ecc08b5befe482d0bc164d23a144e85d987f8f",
+      "hash": "2079205766bb1d311e04e8d7aaafbc283d7c703942b0e5330765bac3a0fa45ac"
+    },
+    {
+      "id": "a74c408e-a08f-4a06-9b71-02b2639dd5df",
+      "time": "2026-09-29T07:15:14.908Z",
+      "user": "engineer@demo.local",
+      "action": "pid_tags_extracted",
+      "resource": "MPR-JULY-26.pdf",
+      "model": "regex+kb-crosscheck",
+      "result": "0 tags",
+      "note": "missing=0 mismatch=0",
+      "prevHash": "406ceef18f50389985c3fea05ebfb9f4dac6ccb488b34693e94eb56337e2cd6b",
+      "hash": "092cfe600a1723244a03445641ecc08b5befe482d0bc164d23a144e85d987f8f"
+    },
+    {
+      "id": "da3e4a5a-c6f2-4633-8c62-f153b93678d8",
+      "time": "2026-09-29T07:15:14.788Z",
+      "user": "engineer@demo.local",
+      "action": "file_upload",
+      "resource": "MPR-JULY-26.pdf",
+      "model": "direct text read",
+      "result": "stored-locally",
+      "note": "clean",
+      "prevHash": "91927defc7b02bd504a5c5dcadab3f0ceee6dc0cebc79f2f8c21cc9c58c78749",
+      "hash": "406ceef18f50389985c3fea05ebfb9f4dac6ccb488b34693e94eb56337e2cd6b"
+    },
+    {
+      "id": "b86d6469-7f6c-49d3-96eb-069bc799a5f1",
+      "time": "2026-09-29T07:14:56.850Z",
+      "user": "engineer@demo.local",
+      "action": "pid_tags_extracted",
+      "resource": "MPR-JULY-26.pdf",
+      "model": "regex+kb-crosscheck",
+      "result": "0 tags",
+      "note": "missing=0 mismatch=0",
+      "prevHash": "36e7c1e9cdda9a0f2f7cad54d61807dffb2baf51f7c1dd4467b57c136ae5900b",
+      "hash": "91927defc7b02bd504a5c5dcadab3f0ceee6dc0cebc79f2f8c21cc9c58c78749"
+    },
+    {
+      "id": "9782d5c3-e19a-40d5-abf8-57057b179ca5",
+      "time": "2026-09-29T07:14:56.732Z",
+      "user": "engineer@demo.local",
+      "action": "file_upload",
+      "resource": "MPR-JULY-26.pdf",
+      "model": "direct text read",
+      "result": "stored-locally",
+      "note": "clean",
+      "prevHash": "d47ed6e9707e0095fe3658243f122bdbd61dc6b34d728dacfdded6db8f7b5244",
+      "hash": "36e7c1e9cdda9a0f2f7cad54d61807dffb2baf51f7c1dd4467b57c136ae5900b"
+    },
+    {
+      "id": "68d6648a-226f-4ce3-a95b-95c6e650f3d9",
+      "time": "2026-09-29T07:11:50.143Z",
+      "user": "engineer@demo.local",
+      "action": "pid_tags_extracted",
+      "resource": "productionsection.pdf",
+      "model": "regex+kb-crosscheck",
+      "result": "105 tags",
+      "note": "missing=105 mismatch=0",
+      "prevHash": "b26f0e367b82b5845e94987fc08c9245cd5aea11c3558b6822eee3b7a218b19c",
+      "hash": "d47ed6e9707e0095fe3658243f122bdbd61dc6b34d728dacfdded6db8f7b5244"
+    },
+    {
+      "id": "7ade46e1-6699-4060-a0b5-d8bf2914109b",
+      "time": "2026-09-29T07:11:49.597Z",
+      "user": "engineer@demo.local",
+      "action": "file_upload",
+      "resource": "productionsection.pdf",
+      "model": "direct text read",
+      "result": "stored-locally",
+      "note": "clean",
+      "prevHash": "f1149b4f01483bfa174743a42a568c698595cbf5753b7b422195a044be358371",
+      "hash": "b26f0e367b82b5845e94987fc08c9245cd5aea11c3558b6822eee3b7a218b19c"
+    },
+    {
+      "id": "b2ece06f-ef9e-4cec-9644-80ff78dca071",
+      "time": "2026-09-29T07:09:36.622Z",
+      "user": "admin@demo.local",
+      "action": "model_registered",
+      "resource": "Gemma-3-12B-Vision",
+      "model": "gemma-3-12b-vision-4",
+      "result": "hot-added to registry",
+      "note": "capabilities: vision, reasoning",
+      "prevHash": "194d2b810b674e3e3ab1953c3a3aba41e8c2fe55ccb4ebdca5c1215068071f70",
+      "hash": "f1149b4f01483bfa174743a42a568c698595cbf5753b7b422195a044be358371"
+    },
+    {
+      "id": "0b036769-d6a8-4d0e-8213-8e98d7056441",
+      "time": "2026-09-29T07:08:19.796Z",
+      "user": "engineer@demo.local",
+      "action": "model_registered",
+      "resource": "Gemma-3-12B-Vision",
+      "model": "gemma-3-12b-vision-3",
+      "result": "hot-added to registry",
+      "note": "capabilities: vision, reasoning",
+      "prevHash": "5d7a57b3d915b22bb895e893a19e54be84c2fc42c0392af34b174838b45c31eb",
+      "hash": "194d2b810b674e3e3ab1953c3a3aba41e8c2fe55ccb4ebdca5c1215068071f70"
+    },
+    {
+      "id": "e900132e-9c8d-4438-8b75-905de374e425",
+      "time": "2026-09-29T07:08:01.812Z",
+      "user": "engineer@demo.local",
+      "action": "model_registered",
+      "resource": "Gemma-3-12B-Vision",
+      "model": "gemma-3-12b-vision-2",
+      "result": "hot-added to registry",
+      "note": "capabilities: vision, reasoning",
+      "prevHash": "1ec42ba3b0bde3a44b91519a7f93659cb66fb759d26eeaa2b2180bb54984aaa2",
+      "hash": "5d7a57b3d915b22bb895e893a19e54be84c2fc42c0392af34b174838b45c31eb"
+    },
+    {
+      "id": "7c27b7cf-20ce-4473-8bbc-f2fcf4706b16",
+      "time": "2026-09-29T07:07:49.961Z",
+      "user": "engineer@demo.local",
+      "action": "model_registered",
+      "resource": "Gemma-3-12B-Vision",
+      "model": "gemma-3-12b-vision",
+      "result": "hot-added to registry",
+      "note": "capabilities: vision, reasoning",
+      "prevHash": "2a63a7d72e088186b09b1016fa6fabdaf7d75f1d9cbd6ffb3c306a0f9d2c99fd",
+      "hash": "1ec42ba3b0bde3a44b91519a7f93659cb66fb759d26eeaa2b2180bb54984aaa2"
+    },
+    {
+      "id": "f6ccdc0e-edf8-4e32-a007-9a7bd521b1b9",
+      "time": "2026-09-29T06:56:08.539Z",
+      "user": "engineer@demo.local",
+      "action": "calc_run",
+      "resource": "margin 8.1-8.5 mm",
+      "model": "local python — Docker engine not running",
+      "result": "-0.40 mm",
+      "note": "1295ms · assistive, engineer-verified",
+      "prevHash": "b97f282a1a01e6495d9ef3a9b4b99b15ab33069bdd36966fe865fe0131ef44d9",
+      "hash": "2a63a7d72e088186b09b1016fa6fabdaf7d75f1d9cbd6ffb3c306a0f9d2c99fd"
+    },
+    {
+      "id": "4d5b121c-f8b4-464f-a52e-d402bd08ed8a",
+      "time": "2026-09-29T06:55:05.154Z",
+      "user": "engineer@demo.local",
+      "action": "calc_run",
+      "resource": "margin 8.1-8.5 mm",
+      "model": "local python — Docker engine not running",
+      "result": "-0.40 mm",
+      "note": "895ms · assistive, engineer-verified",
+      "prevHash": "916fc2452a865c0cf6f2e319a8f2b1cf3bb15e886f276e4481d16781168ebcea",
+      "hash": "b97f282a1a01e6495d9ef3a9b4b99b15ab33069bdd36966fe865fe0131ef44d9"
+    },
+    {
+      "id": "aaa71de5-c2b0-4d8c-a71d-7847963527f5",
+      "time": "2026-09-29T06:54:53.864Z",
+      "user": "engineer@demo.local",
+      "action": "ai_code_solve",
+      "resource": "/code/solve",
+      "model": "agent_service",
+      "result": "ok",
+      "note": "clearance Internal",
+      "prevHash": "7959c487904f3350432f7d16df235c35907b168096ccd13566b34265908005c4",
+      "hash": "916fc2452a865c0cf6f2e319a8f2b1cf3bb15e886f276e4481d16781168ebcea"
+    },
+    {
+      "id": "5fbbd659-6a51-40d9-81c2-655d1fadb1e2",
+      "time": "2026-09-29T06:54:24.184Z",
+      "user": "engineer@demo.local",
+      "action": "sandbox_run",
+      "resource": "task.py",
+      "model": "local python — Docker engine not running",
+      "result": "fail",
+      "note": "1161ms · exit 1",
+      "prevHash": "d5960a5b3192c6ffe22cd0ef8e2c234fa69cd8fa0bf94e1424bb7ee8605199a1",
+      "hash": "7959c487904f3350432f7d16df235c35907b168096ccd13566b34265908005c4"
+    },
+    {
+      "id": "ffc18b85-66bb-4901-8b73-ba4b8729dd76",
+      "time": "2026-09-29T06:52:48.567Z",
+      "user": "engineer@demo.local",
+      "action": "calc_run",
+      "resource": "margin 8.1-8.5 mm",
+      "model": "local python — Docker engine not running",
+      "result": "-0.40 mm",
+      "note": "923ms · assistive, engineer-verified",
+      "prevHash": "567de2dc682f823b460bf0036870a5fa341d1e1bf5e35a720083f66d1b500662",
+      "hash": "d5960a5b3192c6ffe22cd0ef8e2c234fa69cd8fa0bf94e1424bb7ee8605199a1"
+    },
+    {
+      "id": "130211e5-359a-4a4c-8cd3-8e006171d40c",
+      "time": "2026-09-29T06:52:39.890Z",
+      "user": "engineer@demo.local",
+      "action": "knowledge_query",
+      "resource": "What is the minimum shell thickness for P-101?",
+      "model": "retrieval-only",
+      "result": "fallback",
+      "note": "6 chunks, clearance Internal",
+      "prevHash": "841c262eac92a91047c178d6e81fc6b2972bbadbc1be2c72d65270b3fbfc4bff",
+      "hash": "567de2dc682f823b460bf0036870a5fa341d1e1bf5e35a720083f66d1b500662"
+    },
+    {
+      "id": "3ebc7509-cffd-4d43-8238-036bcbc1758f",
+      "time": "2026-09-29T06:52:38.446Z",
+      "user": "engineer@demo.local",
+      "action": "calc_run",
+      "resource": "margin 8.1-8.5 mm",
+      "model": "local python — Docker engine not running",
+      "result": "-0.40 mm",
+      "note": "898ms · assistive, engineer-verified",
+      "prevHash": "429ff2cb96612310000429f6711699f80692363f0c0fad100e65f2dff019c8b4",
+      "hash": "841c262eac92a91047c178d6e81fc6b2972bbadbc1be2c72d65270b3fbfc4bff"
+    },
+    {
+      "id": "813ddb17-a705-4f27-835a-0eb2dd0ddef8",
+      "time": "2026-09-29T06:52:17.432Z",
+      "user": "engineer@demo.local",
+      "action": "ai_kb_answer",
+      "resource": "/kb/answer",
+      "model": "agent_service",
+      "result": "ok",
+      "note": "clearance Internal",
+      "prevHash": "f52a8da31811f1c07ff0e5904deeb2ef944f3e11d65b6325df275cd9d88f40dd",
+      "hash": "429ff2cb96612310000429f6711699f80692363f0c0fad100e65f2dff019c8b4"
+    },
+    {
+      "id": "0de84291-0a74-427f-b36f-f72a0034e24e",
+      "time": "2026-09-29T06:50:50.190Z",
+      "user": "engineer@demo.local",
+      "action": "sandbox_run",
+      "resource": "task.py",
+      "model": "local python — Docker engine not running",
+      "result": "pass",
+      "note": "1000ms · exit 0",
+      "prevHash": "f7347ba99e28caabe81b4ee7880eb7d2158282c552bcbd0147288539676b1aa4",
+      "hash": "f52a8da31811f1c07ff0e5904deeb2ef944f3e11d65b6325df275cd9d88f40dd"
+    },
+    {
+      "id": "72b70984-cdba-4646-a7af-a69183ddbdad",
+      "time": "2026-09-29T06:50:27.937Z",
+      "user": "engineer@demo.local",
+      "action": "ai_code_solve",
+      "resource": "/code/solve",
+      "model": "agent_service",
+      "result": "ok",
+      "note": "clearance Internal",
+      "prevHash": "0714bdeea17a8d6bcefd8279322d4c9c542715523cbf3cdfbf12f8e834d310b1",
+      "hash": "f7347ba99e28caabe81b4ee7880eb7d2158282c552bcbd0147288539676b1aa4"
+    },
+    {
+      "id": "cd078624-be28-401e-88ac-f1b9d6f22b41",
+      "time": "2026-09-29T06:47:49.661Z",
+      "user": "engineer@demo.local",
+      "action": "sandbox_run",
+      "resource": "task.py",
+      "model": "local python — Docker engine not running",
+      "result": "pass",
+      "note": "731ms · exit 0",
+      "prevHash": "fb283f68950e5e8af453b9affe27225571a430cee9a177f302c1b550b53c26e5",
+      "hash": "0714bdeea17a8d6bcefd8279322d4c9c542715523cbf3cdfbf12f8e834d310b1"
+    },
+    {
+      "id": "32272390-b155-4c5b-ad92-1a1610cc058e",
+      "time": "2026-09-29T06:39:23.789Z",
+      "user": "engineer@demo.local",
+      "action": "calc_run",
+      "resource": "margin 8.1-8.5 mm",
+      "model": "local python — Docker engine not running",
+      "result": "-0.40 mm",
+      "note": "1789ms · assistive, engineer-verified",
+      "prevHash": "94678a1a37f2c0a8e78abb36a880f82c90d7a49e583d86814f644cc4f2633d1a",
+      "hash": "fb283f68950e5e8af453b9affe27225571a430cee9a177f302c1b550b53c26e5"
+    },
+    {
+      "id": "6232e961-b268-4dde-ba2e-7ed8bf3a7f1b",
+      "time": "2026-09-28T16:26:31.237Z",
+      "user": "manager@demo.local",
+      "action": "knowledge_query",
+      "resource": "What is the minimum shell thickness for P-101?",
+      "model": "retrieval-only",
+      "result": "fallback",
+      "note": "6 chunks, clearance Restricted",
+      "prevHash": "bd8e95ad5958d2e17894c4a5af1c39959b41422d13d511e25345be7d39ce0a9a",
+      "hash": "94678a1a37f2c0a8e78abb36a880f82c90d7a49e583d86814f644cc4f2633d1a"
+    },
+    {
+      "id": "d1ad6797-206d-42b2-8aba-f3a4d28c67ee",
+      "time": "2026-09-28T15:56:52.170Z",
+      "user": "manager@demo.local",
+      "action": "knowledge_query",
+      "resource": "What is the minimum shell thickness for P-101?",
+      "model": "retrieval-only",
+      "result": "fallback",
+      "note": "6 chunks, clearance Restricted",
+      "prevHash": "ceff1fa85b7bf80cd6577f3482dc0856a631ddb9eb3aad63685226e67ed25beb",
+      "hash": "bd8e95ad5958d2e17894c4a5af1c39959b41422d13d511e25345be7d39ce0a9a"
+    },
+    {
+      "id": "7b1197ae-ba13-41d6-8347-488f5b1bf0ff",
+      "time": "2026-09-28T15:53:15.237Z",
+      "user": "manager@demo.local",
+      "action": "knowledge_query",
+      "resource": "What is the minimum shell thickness for P-101?",
+      "model": "general (qwen3:4b)",
+      "result": "abstained",
+      "note": "4 chunks, clearance Restricted",
+      "prevHash": "09f8704dadb731f3834aee474942e6744c3a25dc36307cf3a5f4c66b2c5fdb72",
+      "hash": "ceff1fa85b7bf80cd6577f3482dc0856a631ddb9eb3aad63685226e67ed25beb"
+    },
+    {
+      "id": "71f52f86-6ff3-4155-a367-08b21399dad2",
+      "time": "2026-09-28T15:51:51.818Z",
+      "user": "manager@demo.local",
+      "action": "knowledge_query",
+      "resource": "What is the minimum shell thickness for P-101?",
+      "model": "general (qwen3:4b)",
+      "result": "abstained",
+      "note": "4 chunks, clearance Restricted",
+      "prevHash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "hash": "09f8704dadb731f3834aee474942e6744c3a25dc36307cf3a5f4c66b2c5fdb72"
+    }
+  ],
   "routingLog": [],
-  "sandboxRuns": [],
-  "lastExtraction": null,
+  "sandboxRuns": [
+    {
+      "id": "134fc0e9",
+      "label": "task.py",
+      "status": "pass",
+      "tests": "no asserts",
+      "ms": 1951,
+      "executedIn": "docker (python:3.11-slim, --network none)",
+      "at": "2026-09-29T14:30:33.848Z",
+      "user": "manager@demo.local"
+    },
+    {
+      "id": "a8613c40",
+      "label": "task.py",
+      "status": "fail",
+      "tests": "no asserts",
+      "ms": 970,
+      "executedIn": "docker (python:3.11-slim, --network none)",
+      "at": "2026-09-29T12:56:07.566Z",
+      "user": "manager@demo.local"
+    },
+    {
+      "id": "2a393f2e",
+      "label": "task.py",
+      "status": "pass",
+      "tests": "no asserts",
+      "ms": 2600,
+      "executedIn": "local python — Docker engine not running",
+      "at": "2026-09-29T07:35:07.878Z",
+      "user": "engineer@demo.local"
+    },
+    {
+      "id": "0ffc3a69",
+      "label": "task.py",
+      "status": "fail",
+      "tests": "no asserts",
+      "ms": 1161,
+      "executedIn": "local python — Docker engine not running",
+      "at": "2026-09-29T06:54:24.132Z",
+      "user": "engineer@demo.local"
+    },
+    {
+      "id": "4ab53dbb",
+      "label": "task.py",
+      "status": "pass",
+      "tests": "no asserts",
+      "ms": 1000,
+      "executedIn": "local python — Docker engine not running",
+      "at": "2026-09-29T06:50:50.144Z",
+      "user": "engineer@demo.local"
+    },
+    {
+      "id": "0f7a1c79",
+      "label": "task.py",
+      "status": "pass",
+      "tests": "no asserts",
+      "ms": 731,
+      "executedIn": "local python — Docker engine not running",
+      "at": "2026-09-29T06:47:49.636Z",
+      "user": "engineer@demo.local"
+    }
+  ],
+  "lastExtraction": {
+    "source": "638ee824bfa67ffb3a87548c6db68305.jpg",
+    "extractedAt": "2026-09-29T12:53:29.679Z",
+    "engine": "regex tag/line extraction over local text (OCR output when attached)",
+    "tags": [],
+    "visionSummary": "Extracted 0 tag(s); 0 not found in the knowledge base and 0 with a conflicting line number."
+  },
   "models": [
     {
       "id": "qwen25-14b",
@@ -138,6 +1806,86 @@
       "state": "resident",
       "enabled": true,
       "source": "ollama (local)"
+    },
+    {
+      "id": "gemma-3-12b-vision",
+      "name": "Gemma-3-12B-Vision",
+      "capabilities": [
+        "vision",
+        "reasoning"
+      ],
+      "ctx": 32768,
+      "vram": "8.2 GB",
+      "tps": 22,
+      "load": "5.1s",
+      "state": "idle",
+      "enabled": true,
+      "source": "ollama (local, pre-pulled)",
+      "addedAt": "2026-09-29T07:07:49.951Z"
+    },
+    {
+      "id": "gemma-3-12b-vision-2",
+      "name": "Gemma-3-12B-Vision",
+      "capabilities": [
+        "vision",
+        "reasoning"
+      ],
+      "ctx": 32768,
+      "vram": "8.2 GB",
+      "tps": 22,
+      "load": "5.1s",
+      "state": "idle",
+      "enabled": true,
+      "source": "ollama (local, pre-pulled)",
+      "addedAt": "2026-09-29T07:08:01.803Z"
+    },
+    {
+      "id": "gemma-3-12b-vision-3",
+      "name": "Gemma-3-12B-Vision",
+      "capabilities": [
+        "vision",
+        "reasoning"
+      ],
+      "ctx": 32768,
+      "vram": "8.2 GB",
+      "tps": 22,
+      "load": "5.1s",
+      "state": "idle",
+      "enabled": true,
+      "source": "ollama (local, pre-pulled)",
+      "addedAt": "2026-09-29T07:08:19.785Z"
+    },
+    {
+      "id": "gemma-3-12b-vision-4",
+      "name": "Gemma-3-12B-Vision",
+      "capabilities": [
+        "vision",
+        "reasoning"
+      ],
+      "ctx": 32768,
+      "vram": "8.2 GB",
+      "tps": 22,
+      "load": "5.1s",
+      "state": "idle",
+      "enabled": true,
+      "source": "ollama (local, pre-pulled)",
+      "addedAt": "2026-09-29T07:09:36.613Z"
+    },
+    {
+      "id": "gemma-3-12b-vision-5",
+      "name": "Gemma-3-12B-Vision",
+      "capabilities": [
+        "vision",
+        "reasoning"
+      ],
+      "ctx": 32768,
+      "vram": "8.2 GB",
+      "tps": 22,
+      "load": "5.1s",
+      "state": "idle",
+      "enabled": true,
+      "source": "ollama (local, pre-pulled)",
+      "addedAt": "2026-09-29T12:53:17.202Z"
     }
   ],
   "kbDocs": [
@@ -299,7 +2047,7 @@
         "avg": "64s"
       }
     ],
-    "lastRun": null,
+    "lastRun": "2026-09-29T07:34:49.025Z",
     "source": "baseline (30-question set, 40 recorded agent runs)"
   },
   "baseline": {

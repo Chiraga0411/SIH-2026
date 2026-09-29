@@ -4,7 +4,14 @@ const GENESIS = '0'.repeat(64);
 const row = (prev, e) => [prev, e.time, e.user, e.action, e.resource, e.model, e.result, e.note || ''].join('|');
 const hash = (prev, e) => crypto.createHash('sha256').update(row(prev, e)).digest('hex');
 
-export async function appendAudit({ user = 'system', action, resource, model = 'gateway', result = 'ok', note = '' }) {
+let auditLock = Promise.resolve();
+export function appendAudit(args) {
+  const job = auditLock.then(() => appendAuditNow(args));
+  auditLock = job.catch(() => {});
+  return job;
+}
+
+async function appendAuditNow({ user = 'system', action, resource, model = 'gateway', result = 'ok', note = '' }) {
   const db = await readStore();
   const prev = db.audit[0]?.hash || GENESIS;
   const entry = { id: crypto.randomUUID(), time: now(), user, action, resource, model, result, note, prevHash: prev };

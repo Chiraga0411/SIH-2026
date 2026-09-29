@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { Panel, Badge, Bar, Icon } from "../components/Hud";
 import { PageHead, Button } from "../components/Chrome";
 import { useApi } from "../api/useApi";
@@ -18,6 +18,37 @@ export default function Knowledge({ fx }) {
   const [busy, setBusy] = useState(false);
   const [err, setErr] = useState("");
 
+  // Model 4 (hybrid dense + BM25 + reranker knowledge base) — a separate
+  // engine from the keyword search above, running in agent_service on
+  // :8002. Kept as its own panel so the original search is untouched.
+  const [m4Result, setM4Result] = useState(null);
+  const [m4Busy, setM4Busy] = useState(false);
+  const [m4Err, setM4Err] = useState("");
+  const { data: kbs, reload: reloadKb } = useApi("/api/ai/kb/stats");
+  const [kbClr, setKbClr] = useState("Internal");
+  const [kbBusy, setKbBusy] = useState(false);
+  const [kbMsg, setKbMsg] = useState("");
+  const kbFile = useRef(null);
+
+  const seedKb = async () => {
+    if (kbBusy) return;
+    setKbBusy(true); setKbMsg("Embedding the sample SOPs… the first run can take a minute.");
+    try {
+      const r = await api("/api/ai/kb/seed", { method: "POST", body: {} });
+      setKbMsg(`Loaded ${r.results?.length || 0} sample documents.`); reloadKb();
+    } catch (e) { setKbMsg(e.message); } finally { setKbBusy(false); }
+  };
+  const uploadKb = async (e) => {
+    const f = e.target.files?.[0]; e.target.value = "";
+    if (!f || kbBusy) return;
+    setKbBusy(true); setKbMsg(`Embedding ${f.name}…`);
+    try {
+      const fd = new FormData(); fd.append("file", f); fd.append("clearance", kbClr);
+      const r = await api("/api/ai/kb/upload", { method: "POST", form: fd });
+      setKbMsg(`${f.name}: ${r.status || "ok"}${r.chunks ? `, ${r.chunks} chunks` : ""} (${r.clearance}).`); reloadKb();
+    } catch (e2) { setKbMsg(e2.message); } finally { setKbBusy(false); }
+  };
+
   const search = async () => {
     if (!q.trim() || busy) return;
     setBusy(true);
@@ -29,6 +60,20 @@ export default function Knowledge({ fx }) {
       setErr(e.message);
     } finally {
       setBusy(false);
+    }
+  };
+
+  const askModel4 = async () => {
+    if (!q.trim() || m4Busy) return;
+    setM4Busy(true);
+    setM4Err("");
+    fx?.busy("kb", 900);
+    try {
+      setM4Result(await api("/api/ai/kb/answer", { method: "POST", body: { question: q.trim() } }));
+    } catch (e) {
+      setM4Err(e.message);
+    } finally {
+      setM4Busy(false);
     }
   };
 
@@ -49,7 +94,8 @@ export default function Knowledge({ fx }) {
               <input value={q} onChange={e => setQ(e.target.value)}
                 onKeyDown={e => e.key === "Enter" && search()}
                 className="flex-1 bg-white/[0.04] border border-hud-edge px-3 py-2.5 text-[14px] text-hud-text outline-none focus:border-hud-cyan" />
-              <Button variant="primary" onClick={search} disabled={busy}>{busy ? "Searching…" : "Search"}</Button>
+              <Button variant="primary" onClick={search} disabled={busy}>{busy ? "Thinking…" : "Search"}</Button>
+              <Button onClick={askModel4} disabled={m4Busy}>{m4Busy ? "Thinking…" : "Ask (Model 4)"}</Button>
             </div>
             {err && <div className="border border-hud-red/50 bg-hud-red/[0.07] px-3 py-2 mb-3 text-[13px] text-hud-dim">{err}</div>}
 
@@ -69,7 +115,16 @@ export default function Knowledge({ fx }) {
                         <Badge tone="cyan">score {result.confidence}</Badge>
                       </>
                     )}
+                    {result.answerSource && (
+                      <Badge tone={result.model ? "green" : "dim"}>{result.answerSource}</Badge>
+                    )}
+                    {result.model?.latency_s != null && (
+                      <Badge tone="dim">{result.model.latency_s}s</Badge>
+                    )}
                   </div>
+                  {result.modelNote && (
+                    <p className="text-[12px] text-hud-amber mt-2">{result.modelNote}</p>
+                  )}
                 </div>
 
                 <div className="text-[12px] text-hud-faint mb-2">
@@ -90,6 +145,48 @@ export default function Knowledge({ fx }) {
                   When the best chunk scores below {result.threshold} the agent answers “not found in the knowledge base” instead of guessing.
                 </p>
               </>
+            )}
+
+            {m4Err && <div className="border border-hud-red/50 bg-hud-red/[0.07] px-3 py-2 mt-3 text-[13px] text-hud-dim">
+              Model 4 service: {m4Err} — is agent_service running on port 8002?
+            </div>}
+
+            <div className="mt-4 pt-4 border-t border-hud-edge">
+              <div className="flex gap-2 items-center flex-wrap mb-2">
+                <Badge tone={kbs?.chunks ? "green" : "amber"}>{kbs ? `${kbs.chunks} chunks · ${(kbs.sources || []).length} docs indexed` : "index status unknown"}</Badge>
+                <select value={kbClr} onChange={e => setKbClr(e.target.value)}
+                  className="bg-[#0b1a2c] border border-hud-edge text-hud-text text-[13px] px-2 py-1.5 outline-none">
+                  <option>Public</option><option>Internal</option><option>Restricted</option>
+                </select>
+                <input ref={kbFile} type="file" accept=".md,.txt,.pdf" className="hidden" onChange={uploadKb} />
+                <Button onClick={() => kbFile.current?.click()} disabled={kbBusy}>Upload document</Button>
+                <Button onClick={seedKb} disabled={kbBusy}>Load sample SOPs</Button>
+              </div>
+              {kbMsg && <p className="text-[12px] text-hud-amber leading-snug">{kbMsg}</p>}
+              {kbs && !kbs.chunks && <p className="text-[12px] text-hud-faint leading-snug mt-1">Model 4 has no documents yet, so every question returns “not found”. Load the sample SOPs or upload a document first.</p>}
+            </div>
+
+            {m4Result && (
+              <div className="mt-4 pt-4 border-t border-hud-edge">
+                <div className="text-[12px] text-hud-faint mb-2">Model 4 — hybrid dense + BM25 + reranker (separate index)</div>
+                <div className={`border-l-2 pl-3.5 py-1 mb-3 ${m4Result.status === "not_found" ? "border-hud-amber" : "border-hud-cyan"}`}>
+                  <p className="text-[14px] text-hud-text leading-relaxed">{m4Result.answer || "Not found in the knowledge base."}</p>
+                  <div className="flex gap-2 mt-2.5 flex-wrap">
+                    <Badge tone={m4Result.status === "not_found" ? "amber" : m4Result.status === "answered" ? "green" : "cyan"}>
+                      {m4Result.status === "not_found" ? "abstained" : m4Result.status === "answered" ? `${(m4Result.citations || []).length} cited` : m4Result.status}
+                    </Badge>
+                  </div>
+                </div>
+                {(m4Result.status === "not_found" ? [] : (m4Result.search?.hits || [])).map((h, i) => (
+                  <div key={i} className="border border-hud-edge bg-black/20 p-3 mb-2 last:mb-0">
+                    <div className="flex items-baseline gap-2 mb-1.5 flex-wrap">
+                      <span className="text-[13px] text-hud-cyan">{h.citation || h.source || h.doc}</span>
+                      <span className="ml-auto text-[12px] text-hud-dim">score {(() => { const sc = h.rerank_score ?? h.dense_score ?? h.fused_score; return sc?.toFixed ? sc.toFixed(2) : sc; })()}</span>
+                    </div>
+                    <p className="text-[14px] text-hud-dim leading-relaxed">{h.text}</p>
+                  </div>
+                ))}
+              </div>
             )}
           </Panel>
 

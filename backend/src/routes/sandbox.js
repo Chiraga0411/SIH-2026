@@ -6,9 +6,15 @@ import { appendAudit } from '../services/auditChain.js';
 
 const r = Router();
 
-r.get('/runs', async (req, res) => res.json((await readStore()).sandboxRuns));
+// Express 4 does not catch errors thrown in async handlers; report them instead of hanging the request.
+const safe = fn => (req, res) => Promise.resolve(fn(req, res)).catch(err => {
+  console.error('sandbox route failed:', err);
+  if (!res.headersSent) res.status(500).json({ error: 'sandbox_route_failed', message: `${err.code ? err.code + ': ' : ''}${err.message}` });
+});
 
-r.post('/run', async (req, res) => {
+r.get('/runs', safe(async (req, res) => res.json((await readStore()).sandboxRuns)));
+
+r.post('/run', safe(async (req, res) => {
   const code = String(req.body?.code || '');
   if (!code.trim()) return res.status(400).json({ error: 'code is required' });
   if (code.length > 20000) return res.status(413).json({ error: 'code too large' });
@@ -30,9 +36,9 @@ r.post('/run', async (req, res) => {
     note: `${result.ms}ms · exit ${result.exitCode}`,
   });
   res.json(result);
-});
+}));
 
-r.post('/probe', async (req, res) => {
+r.post('/probe', safe(async (req, res) => {
   const target = String(req.body?.target || 'api.openai.com:443');
   const probe = await probeInContainer(target);
   const by = probe.ran
@@ -40,9 +46,9 @@ r.post('/probe', async (req, res) => {
     : 'gateway egress monitor DENY_ALL (Docker engine not running — no call was routed)';
   const rec = await recordBlockedProbe(req.user.username, target, by);
   res.json({ ...rec, method: probe.ran ? 'container isolation' : 'gateway policy', detail: probe.detail, flags: SANDBOX_FLAGS });
-});
+}));
 
-r.post('/calc', async (req, res) => {
+r.post('/calc', safe(async (req, res) => {
   const measured = Number(req.body?.measured);
   const minimum = Number(req.body?.minimum);
   const unit = String(req.body?.unit || 'mm').slice(0, 12);
@@ -78,6 +84,6 @@ r.post('/calc', async (req, res) => {
   });
 
   res.json({ steps, result: `${margin.toFixed(2)} ${unit}`, below, verdict: steps[3].v, engine: run, docker: await dockerReady() });
-});
+}));
 
 export default r;

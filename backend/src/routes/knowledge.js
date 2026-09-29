@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import { readStore } from '../db/store.js';
+import { appendAudit } from '../services/auditChain.js';
 
 /* Local knowledge base: documents + hybrid-style retrieval with
    retrieval-time clearance enforcement. A user below a document's
@@ -11,6 +12,31 @@ const RANK = { Public: 0, Internal: 1, Restricted: 2 };
 const STOP = new Set(['the', 'and', 'for', 'with', 'what', 'which', 'this', 'that', 'from', 'are', 'was', 'were', 'how', 'why', 'who', 'when', 'does', 'have', 'has', 'into', 'their', 'about', 'not', 'any', 'all', 'you', 'your']);
 const MIN_SCORE = 0.34;
 const rank = c => RANK[c] ?? 1;
+
+/* Model #1 (general LLM, FastAPI on :8002) writes the final answer from the
+   retrieved chunks only. If the service is down or slow we fall back to the
+   plain retrieval answer, so this page never breaks. */
+const GENERAL_SERVICE_URL = process.env.GENERAL_SERVICE_URL || 'http://localhost:8002';
+
+async function groundedAnswer(question, top) {
+  try {
+    const resp = await fetch(`${GENERAL_SERVICE_URL}/answer`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        question,
+        chunks: top.map(t => ({ doc: t.doc, page: t.page, text: t.text })),
+      }),
+      signal: AbortSignal.timeout(180000),
+    });
+    if (!resp.ok) throw new Error(`General model service returned ${resp.status}`);
+    const j = await resp.json();
+    if (!j.answer || !String(j.answer).trim()) throw new Error('empty answer from model');
+    return j;
+  } catch (err) {
+    return { error: err.name === 'TimeoutError' ? 'model timed out' : err.message };
+  }
+}
 
 function tokens(q) {
   return (q.toLowerCase().match(/[a-z0-9][a-z0-9.-]{2,}/g) || []).filter(t => !STOP.has(t));
@@ -52,20 +78,51 @@ r.post('/search', async (req, res) => {
     }
   }
   scored.sort((a, b) => b.score - a.score);
-  const top = scored.slice(0, 4);
+  const top = scored.slice(0, 6);
   const best = top[0]?.score || 0;
   const abstained = best < MIN_SCORE || !top.length;
 
+  let answer = abstained
+    ? 'Not found in the knowledge base.'
+    : top.slice(0, 2).map(t => t.text).join(' ');
+  let citations = abstained ? [] : top;
+  let abstainedFinal = abstained;
+  let answerSource = 'retrieval only';
+  let modelInfo = null;
+  let modelNote = null;
+
+  if (!abstained) {
+    const llm = await groundedAnswer(q, top);
+    if (llm.error) {
+      modelNote = `General model unavailable (${llm.error}) — showing retrieved text instead.`;
+    } else {
+      answer = String(llm.answer).trim();
+      answerSource = `model: general (${llm.tag || 'qwen3'})`;
+      modelInfo = { tag: llm.tag, latency_s: llm.latency_s };
+      if (/^not found in the knowledge base/i.test(answer)) {
+        abstainedFinal = true;
+        citations = [];
+      }
+    }
+    await appendAudit({
+      user: req.user.username, action: 'knowledge_query', resource: q.slice(0, 80),
+      model: llm.error ? 'retrieval-only' : `general (${llm.tag || 'qwen3'})`,
+      result: abstainedFinal ? 'abstained' : (llm.error ? 'fallback' : 'answered'),
+      note: `${top.length} chunks, clearance ${req.user.clearance}`,
+    });
+  }
+
   res.json({
     query: q,
-    answer: abstained
-      ? 'Not found in the knowledge base.'
-      : top.slice(0, 2).map(t => t.text).join(' '),
-    citations: abstained ? [] : top,
+    answer,
+    citations,
     confidence: best,
-    abstained,
+    abstained: abstainedFinal,
     threshold: MIN_SCORE,
     clearance: req.user.clearance,
+    answerSource,
+    model: modelInfo,
+    modelNote,
     retrieval: {
       docsConsidered: db.kbDocs.length,
       docsFilteredByClearance: docsFiltered,

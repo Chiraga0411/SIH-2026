@@ -24,6 +24,17 @@ export default function Agent({ fx }) {
   const [err, setErr] = useState("");
   const fileInput = useRef(null);
 
+  // Model 7: the full PLAN -> ACT -> OBSERVE -> VERIFY -> DELIVER loop
+  // running in agent_service, as an alternative to the Node workflow above.
+  const [aiRun, setAiRun] = useState(null);
+  const [aiBusy, setAiBusy] = useState(false);
+  const [aiErr, setAiErr] = useState("");
+
+  // Model 8: generate a real docx/pptx/xlsx directly from a request.
+  const [docBusy, setDocBusy] = useState(false);
+  const [docResult, setDocResult] = useState(null);
+  const [docErr, setDocErr] = useState("");
+
   /* boot: latest task + file names */
   useEffect(() => {
     api("/api/tasks").then(t => setTask(t[0] || null)).catch(() => {});
@@ -88,6 +99,51 @@ export default function Agent({ fx }) {
 
   const fetchDeliverable = (fmt, name) =>
     download(`/api/tasks/${task.id}/deliverable?format=${fmt}`, name).catch(e => setErr(e.message));
+
+  const runWithAgentModel = async () => {
+    if (aiBusy) return;
+    const prompt = (draft.trim() || taskText).trim();
+    if (!prompt) return;
+    setAiBusy(true);
+    setAiErr("");
+    fx?.busy("studio", 3000);
+    try {
+      setAiRun(await api("/api/ai/agent/run", { method: "POST", body: { request: prompt } }));
+    } catch (e) {
+      setAiErr(e.message);
+    } finally {
+      setAiBusy(false);
+    }
+  };
+
+  const approveAiRun = async () => {
+    if (!aiRun?.run_id || aiBusy) return;
+    setAiBusy(true);
+    setAiErr("");
+    try {
+      setAiRun(await api("/api/ai/agent/approve", { method: "POST", body: { run_id: aiRun.run_id } }));
+    } catch (e) {
+      setAiErr(e.message);
+    } finally {
+      setAiBusy(false);
+    }
+  };
+
+  const generateWithModel8 = async () => {
+    if (docBusy) return;
+    const prompt = (draft.trim() || taskText).trim();
+    if (!prompt) return;
+    setDocBusy(true);
+    setDocErr("");
+    fx?.busy("studio", 2000);
+    try {
+      setDocResult(await api("/api/ai/doc/generate", { method: "POST", body: { request: prompt } }));
+    } catch (e) {
+      setDocErr(e.message);
+    } finally {
+      setDocBusy(false);
+    }
+  };
 
   const plan = task?.plan || FALLBACK_PLAN;
   const trace = (task?.trace || []).map(e => ({
@@ -234,7 +290,39 @@ export default function Agent({ fx }) {
               placeholder="Ask the agent, or give it the next task..."
               className="flex-1 bg-white/[0.04] border border-hud-edge px-3 py-2.5 text-[14px] text-hud-text placeholder-hud-faint outline-none focus:border-hud-cyan" />
             <Button variant="primary" onClick={runTask}>{busy ? "Starting…" : "Run task"}</Button>
+            <Button onClick={runWithAgentModel} disabled={aiBusy} title="Run the full agent loop in agent_service (Model 7) instead">
+              {aiBusy ? "Running (Model 7)…" : "Run with Model 7"}
+            </Button>
           </div>
+
+          {(aiErr || aiRun) && (
+            <div className="p-3.5 border-t border-hud-edge">
+              {aiErr && <div className="border border-hud-red/50 bg-hud-red/[0.07] px-3 py-2 mb-2 text-[13px] text-hud-dim">
+                Model 7: {aiErr} — is agent_service running on port 8002?
+              </div>}
+              {aiRun && (
+                <div className="border border-hud-edge bg-black/20 p-3">
+                  <div className="flex items-center gap-2 mb-2">
+                    <Badge tone={aiRun.status === "done" ? "green" : aiRun.status === "awaiting_approval" ? "amber" : "cyan"}>{aiRun.status}</Badge>
+                    <span className="text-[12px] text-hud-faint">Model 7 agent run · {(aiRun.trace || []).length} step(s)</span>
+                    {aiRun.approval_required && aiRun.status !== "done" && (
+                      <Button className="ml-auto" onClick={approveAiRun} disabled={aiBusy}>Approve</Button>
+                    )}
+                  </div>
+                  {(aiRun.trace || []).map((s, i) => (
+                    <div key={i} className="text-[13px] text-hud-dim py-1 border-b border-white/[0.05] last:border-0">
+                      <b className="text-hud-text">{s.name}</b> — {s.status}{s.detail ? `: ${s.detail}` : ""}
+                    </div>
+                  ))}
+                  {(aiRun.outputs || []).length > 0 && (
+                    <div className="mt-2 text-[12px] text-hud-faint font-mono break-all">
+                      output: {aiRun.outputs.join(", ")}
+                    </div>
+                  )}
+                </div>
+              )}
+            </div>
+          )}
         </Panel>
 
         <div className="space-y-3.5">
@@ -268,6 +356,21 @@ export default function Agent({ fx }) {
             <p className="text-[12px] text-hud-faint leading-snug mt-2.5">
               Word is generated at delivery; Excel has live formulas and PPT is the board brief — both generated on demand from this task's findings.
             </p>
+
+            <Button className="w-full mt-3" onClick={generateWithModel8} disabled={docBusy}
+              title="Generate a document directly with Model 8, from the prompt box above, independent of this task">
+              {docBusy ? "Generating (Model 8)…" : "Generate directly with Model 8"}
+            </Button>
+            {docErr && <div className="border border-hud-red/50 bg-hud-red/[0.07] px-3 py-2 mt-2 text-[13px] text-hud-dim">
+              {docErr} — is agent_service running on port 8002?
+            </div>}
+            {docResult && (
+              <div className="mt-2 text-[12px] text-hud-dim">
+                <Badge tone={docResult.status === "ok" ? "green" : "red"}>{docResult.status}</Badge>
+                {docResult.path && <span className="ml-2 font-mono break-all">{docResult.path}</span>}
+                {docResult.error && <span className="ml-2">{docResult.error}</span>}
+              </div>
+            )}
           </Panel>
 
           <Panel title="Activity" meta={trace.length ? `${trace.length} steps` : "idle"}>
